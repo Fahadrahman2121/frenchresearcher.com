@@ -127,6 +127,16 @@
   .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
   .tag { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: .82rem; color: var(--navy); }
 
+  /* Skills */
+  .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 36px; }
+  .skill { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 22px 18px; }
+  .skill h3 { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; font-size: 1.05rem; }
+  .skill h3 svg { width: 22px; height: 22px; flex: none; color: var(--accent); }
+  .skill .tags { margin-top: 0; }
+  .skill .tag.lead { background: var(--navy); color: #fff; border-color: var(--navy); }
+  @media (max-width: 1000px) { .skills { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .skills { grid-template-columns: 1fr; } }
+
   /* Track record */
   .timeline { list-style: none; padding: 0; margin: 36px 0 0; border-left: 2px solid var(--line); }
   .timeline li { position: relative; padding: 0 0 28px 28px; }
@@ -144,6 +154,10 @@
   .work p { color: var(--ink); font-size: .93rem; margin: 0 0 10px; }
   .work .result { flex: 1; font-size: .93rem; color: var(--muted); margin: 0 0 14px; padding-left: 12px; border-left: 3px solid var(--accent); }
   .work .stack { display: flex; flex-wrap: wrap; gap: 6px; }
+  .work .live { display: inline-flex; align-items: center; gap: 6px; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: #0a7a3b; background: #e8f7ee; border: 1px solid #bfe6cf; border-radius: 999px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+  .work .live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #16a34a; box-shadow: 0 0 0 3px rgba(22,163,74,.2); }
+  .work .visit { display: inline-block; margin-top: 12px; font-weight: 600; color: var(--navy); text-decoration: none; font-size: .9rem; }
+  .work .visit:hover { text-decoration: underline; }
   .work .stack span { font-size: .74rem; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 999px; padding: 2px 9px; color: var(--navy); }
   @media (max-width: 1000px) { .folio { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 700px) { .folio { grid-template-columns: 1fr; } }
@@ -412,6 +426,46 @@
   </div>
 </section>
 
+<section class="soft" id="skills">
+  <div class="wrap">
+    <span class="eyebrow">Skills</span>
+    <h2>What I bring to the table</h2>
+    <p class="intro">Twenty years across the stack, from board papers to firewall rules. Highlighted items are where I am used most often.</p>
+    <div class="skills">
+      <div class="skill">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20V9l7-5 7 5v11"/><path d="M9 20v-6h6v6"/></svg>Leadership &amp; strategy</h3>
+        <div class="tags"><span class="tag lead">Technology strategy</span><span class="tag lead">Digital transformation</span><span class="tag">Enterprise architecture</span><span class="tag">Cloud strategy</span><span class="tag">Board-level advisory</span><span class="tag">Programme leadership</span><span class="tag">Vendor &amp; stakeholder management</span><span class="tag">IT governance</span></div>
+      </div>
+      <div class="skill">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>Cybersecurity</h3>
+        <div class="tags"><span class="tag">Security governance</span><span class="tag">ISO 27001 / ISMS</span><span class="tag lead">Security auditing</span><span class="tag">Vulnerability &amp; CVE management</span><span class="tag">Firewalls: Cisco ASA, Fortinet, Palo Alto, Huawei</span><span class="tag">Darktrace</span><span class="tag">Incident handling</span><span class="tag lead">DevSecOps &amp; code review</span><span class="tag">Digital forensics</span></div>
+      </div>
+      <div class="skill">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg>Infrastructure &amp; networks</h3>
+        <div class="tags"><span class="tag">Cisco routing &amp; switching</span><span class="tag lead">Network segmentation</span><span class="tag">Virtualisation (Huawei FusionCompute)</span><span class="tag">Active Directory &amp; LDAP</span><span class="tag">Microsoft 365 &amp; Exchange Online</span><span class="tag">SSL VPN</span><span class="tag">Backup &amp; recovery (Veeam)</span><span class="tag">Linux &amp; Windows Server</span></div>
+      </div>
+      <div class="skill">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>Enterprise systems &amp; data</h3>
+        <div class="tags"><span class="tag lead">SAP S/4HANA</span><span class="tag lead">Oracle EBS</span><span class="tag">Microsoft Dynamics 365</span><span class="tag">Data migration</span><span class="tag">Master data governance</span><span class="tag">Business process automation</span><span class="tag">Digital payments</span><span class="tag">E-commerce platforms</span><span class="tag">Student information systems</span></div>
+      </div>
+      <div class="skill">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg>Software &amp; platforms</h3>
+        <div class="tags"><span class="tag lead">Python / Django</span><span class="tag">PowerShell</span><span class="tag">REST APIs</span><span class="tag">Microsoft Graph</span><span class="tag">SQL Server</span><span class="tag">.NET &amp; Angular (review)</span><span class="tag">Git &amp; CI gates</span><span class="tag">Web application security</span></div>
+      </div>
+      <div class="skill">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4M6.5 10v4M17.5 10v4M10 17.5h4"/></svg>Research &amp; emerging technology</h3>
+        <div class="tags"><span class="tag lead">Blockchain architecture</span><span class="tag">Sharding &amp; consensus</span><span class="tag">Cross-chain protocols</span><span class="tag">Blockchain oracles</span><span class="tag lead">Post-quantum readiness</span><span class="tag">AI governance</span><span class="tag">Simulation &amp; reproducible research</span><span class="tag">Technical writing (IEEE, Springer)</span></div>
+      </div>
+    </div>
+    <div class="tags" style="margin-top:26px;align-items:center">
+      <span style="font-size:.85rem;color:var(--muted);margin-right:6px">Certified:</span>
+      <span class="tag">PMP</span><span class="tag">ITIL</span><span class="tag">CCNA</span><span class="tag">CCNA Security</span><span class="tag">CCSP</span>
+      <span style="font-size:.85rem;color:var(--muted);margin:0 6px 0 14px">Languages:</span>
+      <span class="tag">English, professional</span><span class="tag">Urdu, native</span><span class="tag">French, A2</span>
+    </div>
+  </div>
+</section>
+
 <section id="work">
   <div class="wrap">
     <span class="eyebrow">Track record</span>
@@ -460,12 +514,21 @@
   <div class="wrap">
     <span class="eyebrow">Projects</span>
     <h2>Selected projects</h2>
-    <p class="intro">Systems I have designed, built or led to production. Client names appear where the work is already public; the rest are described by sector.</p>
+    <p class="intro">Systems I have designed, built or led to production, including products I run today. Client names appear where the work is already public; the rest are described by sector.</p>
     <div class="folio">
+      <div class="work">
+        <div class="cat">Live product <span class="live">Live</span></div>
+        <h3>Solar service CRM and quotation platform</h3>
+        <div class="client">M.F. Engineering Services, Lahore &middot; in production</div>
+        <p>A complete operations system for a solar installer: customer portal for complaints and status tracking, service desk with approvals, field scheduler and engineer profiles, quotations generated from bill-of-quantities templates, and project timelines.</p>
+        <div class="result">Runs the company’s daily service and sales workflow; built, hosted and maintained end to end.</div>
+        <a class="visit" href="https://crm.mfes.com.pk" target="_blank" rel="noopener">crm.mfes.com.pk &rarr;</a>
+        <div class="stack"><span>Django</span><span>Python</span><span>MySQL</span><span>Customer portal</span><span>Quotation engine</span><span>Field operations</span></div>
+      </div>
       <div class="work">
         <div class="cat">Internal platform</div>
         <h3>Staff services portal: helpdesk, attendance and canteen</h3>
-        <div class="client">Punjab Agriculture, Food and Drug Authority, 2026</div>
+        <div class="client">Punjab Agriculture, Food and Drug Authority, 2026 &middot; in production, internal</div>
         <p>Designed and built a single portal for every domain user: IT help desk with resolution tracking, HR attendance fed by biometric terminals, canteen booking with cash settlement, notices and appointments.</p>
         <div class="result">Replaced an off-the-shelf ticketing tool; live for all staff, with single sign-on against the directory.</div>
         <div class="stack"><span>Django</span><span>Active Directory</span><span>LDAPS</span><span>ZKTeco</span><span>Linux</span></div>
