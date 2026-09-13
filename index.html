@@ -112,7 +112,9 @@
 
   /* Blockchain projects */
   .proj { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 36px; }
-  .proj .card { display: flex; flex-direction: column; }
+  .proj .card { display: flex; flex-direction: column; padding-top: 0; overflow: hidden; }
+  .proj .art { margin: 0 -26px 16px; }
+  .proj .art svg { display: block; width: 100%; height: auto; border-radius: var(--radius) var(--radius) 0 0; }
   .proj .status { display: inline-block; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; color: var(--navy); background: var(--bg-soft); border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; margin-bottom: 12px; align-self: flex-start; }
   .proj h3 { margin-bottom: 8px; }
   .proj p { flex: 1; }
@@ -199,7 +201,7 @@
     <div>
       <span class="eyebrow">Strategic IT &middot; Cybersecurity &middot; Blockchain &middot; Digital Transformation</span>
       <h1>Technology leadership for organisations that cannot afford to get it wrong.</h1>
-      <p class="lede">I am Dr Fahad Rahman, an independent IT consultant with over twenty years in enterprise technology, ten of them at executive level, across government, education, telecom and multinational organisations. I help boards and leadership teams set technology strategy, secure what they run, and deliver the systems their business depends on.</p>
+      <p class="lede">Independent IT consultant. Twenty years in enterprise technology, ten at executive level, across government, education, telecom and multinationals. I help leadership teams set strategy, secure what they run, and deliver the systems the business depends on.</p>
       <div class="btns">
         <a class="btn btn-primary" href="#contact">Start a conversation</a>
         <a class="btn btn-ghost" href="#services">What I do</a>
@@ -224,37 +226,37 @@
   <div class="wrap">
     <span class="eyebrow">Services</span>
     <h2>What I do for clients</h2>
-    <p class="intro">Engagements are scoped to a clear outcome. I deliver hands-on, and leave your own team stronger than before. Available for advisory retainers, fixed-scope projects and interim leadership, remote or on site.</p>
+    <p class="intro">Scoped to a clear outcome, delivered hands-on. Advisory retainers, fixed-scope projects or interim leadership, remote or on site.</p>
     <div class="grid">
       <div class="card">
         <div class="num">01</div>
         <h3>Technology strategy &amp; digital transformation</h3>
-        <p>Enterprise technology roadmaps aligned to business goals, enterprise architecture, board-level advisory and programme leadership for large-scale modernisation.</p>
+        <p>Technology roadmaps, enterprise architecture and board-level advisory for large-scale modernisation.</p>
       </div>
       <div class="card">
         <div class="num">02</div>
         <h3>Cybersecurity assessment &amp; governance</h3>
-        <p>Whole-estate security audits of networks, firewalls, directories and virtualisation, graded findings with staged remediation, ISO 27001-aligned controls and vendor code review before anything reaches production.</p>
+        <p>Whole-estate security audits with graded findings, ISO 27001-aligned controls and vendor code review before go-live.</p>
       </div>
       <div class="card">
         <div class="num">03</div>
         <h3>ERP &amp; enterprise systems</h3>
-        <p>Implementation governance, data migration and integration for SAP S/4HANA, Oracle EBS and Microsoft Dynamics 365, from vendor selection to operational hand-over.</p>
+        <p>Implementation governance, data migration and integration for SAP S/4HANA, Oracle EBS and Dynamics 365.</p>
       </div>
       <div class="card">
         <div class="num">04</div>
         <h3>Infrastructure, cloud &amp; networks</h3>
-        <p>Virtualisation platforms, network segmentation, secure remote access, Microsoft 365 tenancy and identity, designed for operational continuity and audited after go-live.</p>
+        <p>Virtualisation, network segmentation, secure remote access, Microsoft 365 and identity, built for continuity.</p>
       </div>
       <div class="card">
         <div class="num">05</div>
         <h3>Digital platforms &amp; automation</h3>
-        <p>Customer-care systems, e-commerce, service portals and payment workflows: designed, built and taken to production with the governance that keeps them running.</p>
+        <p>Customer-care systems, e-commerce, service portals and payment workflows, designed and taken to production.</p>
       </div>
       <div class="card">
         <div class="num">06</div>
         <h3>Blockchain, AI &amp; emerging technology advisory</h3>
-        <p>Research-backed guidance on secure system architecture, blockchain and AI adoption, with structured governance from proof of concept to enterprise rollout.</p>
+        <p>Research-backed guidance on blockchain and AI adoption, from proof of concept to enterprise rollout.</p>
       </div>
     </div>
   </div>
@@ -265,10 +267,9 @@
     <div>
       <span class="eyebrow">About</span>
       <h2>Executive experience, research depth</h2>
-      <p>I have led IT for a provincial regulator, a national railway, one of the largest school networks in Pakistan, and public-sector transport organisations, worked as a security engineer in France, and taught and consulted in digital forensics at Lahore Garrison University. That combination means I have sat on both sides of the table: the executive who owns the outcome and the engineer who has to make it work.</p>
-      <p>My doctorate at Universit&eacute; Paris Cit&eacute; is in blockchain systems, and I continue to publish with IEEE and Springer on secure, scalable distributed systems. Clients get practical advice grounded in current research, not slideware.</p>
-      <p>I work in English and Urdu, and hold an A2 level in French.</p>
-    </div>
+      <p>I have led IT for a provincial regulator, a national railway and one of the largest school networks in Pakistan, worked as a security engineer in France, and taught digital forensics at Lahore Garrison University. I have sat on both sides of the table: the executive who owns the outcome and the engineer who makes it work.</p>
+      <p>My doctorate at Universit&eacute; Paris Cit&eacute; is in blockchain systems, and I still publish with IEEE and Springer. Clients get advice grounded in current research, not slideware.</p>
+          </div>
     <div class="facts">
       <h3>Qualifications</h3>
       <dl>
@@ -297,37 +298,37 @@
       <li>
         <div class="when">2026 &ndash; present &middot; Government regulator</div>
         <h3>General Manager IT, Punjab Agriculture, Food and Drug Authority</h3>
-        <p>Head of IT for the provincial regulator. Established continuous, read-only security auditing of the hypervisor cluster, edge firewall and directory with graded findings and automated alerting; designed and shipped the authority's internal helpdesk, attendance and canteen platform; defined the segmented hosting architecture, vendor VPN restrictions and DevSecOps release gate for a vendor-built inventory system.</p>
+        <p>Head of IT for the provincial regulator: continuous security auditing of the cluster, firewall and directory; an in-house helpdesk and attendance platform; segmented hosting and a DevSecOps release gate for a vendor-built system.</p>
       </li>
       <li>
         <div class="when">2025 &ndash; 2026 &middot; Academia</div>
         <h3>Adjunct Faculty Member, Trainer &amp; Consultant, Lahore Garrison University</h3>
-        <p>Department of Criminology and the Digital Forensic Research and Service Centre (DFRSC). Taught undergraduate courses with laboratory sessions and mentoring, supervised research and academic projects, conducted research in digital forensics, blockchain and emerging technologies, and delivered professional training, technical consultancy and keynote talks.</p>
+        <p>Department of Criminology and the Digital Forensic Research and Service Centre. Undergraduate teaching, research supervision, professional training and keynote talks in digital forensics and blockchain.</p>
       </li>
       <li>
         <div class="when">2024 &ndash; 2025 &middot; Education</div>
         <h3>General Manager IT, Education Services Limited (The City School Network)</h3>
-        <p>Led enterprise IT operations, cybersecurity and digital transformation across the network. Delivered the organisation's first online book-selling platform, generating over PKR 100 million in online sales, and a centralised customer-care management system. Managed Oracle EBS, cloud services and ERP integration.</p>
+        <p>Enterprise IT, cybersecurity and digital transformation across the network. Delivered the first online book-selling platform (over PKR 100 million in sales) and a centralised customer-care system; ran Oracle EBS and cloud services.</p>
       </li>
       <li>
         <div class="when">2023 &ndash; 2024 and 2015 &ndash; 2019 &middot; Public sector</div>
         <h3>Director IT, Pakistan Railways</h3>
-        <p>Directed enterprise-wide IT modernisation and SAP transformation governance for one of Pakistan's largest nationwide public-sector organisations, including role-based access governance, network security and operational continuity across geographically distributed sites.</p>
+        <p>Enterprise-wide IT modernisation and SAP transformation governance for one of Pakistan's largest public-sector organisations.</p>
       </li>
       <li>
         <div class="when">2020 &ndash; 2022 &middot; France</div>
         <h3>Ing&eacute;nieur S&eacute;curit&eacute;, Alfabet-group and Zyneas Technology</h3>
-        <p>Vulnerability management, CVE identification and mitigation, security hardening and incident response coordination across enterprise systems; designed and built CVE management software for commercial cybersecurity operations.</p>
+        <p>Vulnerability management, hardening and incident response; built CVE management software for commercial security operations.</p>
       </li>
       <li>
         <div class="when">2019 &ndash; 2020 &middot; Academia</div>
         <h3>Lecturer in Cybersecurity, University of Engineering &amp; Technology, Lahore</h3>
-        <p>Taught cybersecurity and secure systems to engineering and computer science students, with practical labs.</p>
+        <p>Cybersecurity and secure systems courses with practical labs.</p>
       </li>
       <li>
         <div class="when">2006 &ndash; 2015 &middot; Telecom and transport</div>
         <h3>Earlier roles</h3>
-        <p>General Manager Computer Department at Lahore Parking Company; Manager IT at Lahore Transport Company; IP core network operations at Wateen Telecom; systems and network specialist at V-Technologies.</p>
+        <p>Lahore Parking Company, Lahore Transport Company, Wateen Telecom and V-Technologies: IT management and network operations.</p>
       </li>
     </ul>
   </div>
@@ -337,49 +338,111 @@
   <div class="wrap">
     <span class="eyebrow">Blockchain</span>
     <h2>Blockchain research and projects</h2>
-    <p class="intro">My doctorate at Universit&eacute; Paris Cit&eacute; was on making blockchain systems scale without giving up trust. The work since then follows the same thread: sharding, cross-chain control, oracle trust and, most recently, what quantum computing does to a transaction while it waits in the mempool. Every project below has a peer-reviewed paper behind it, and the recent ones ship with a reproducible simulator.</p>
+    <p class="intro">Making blockchain systems scale without giving up trust: sharding, cross-chain control, oracle trust and, most recently, quantum threats to the mempool. Every project has a peer-reviewed paper behind it.</p>
     <div class="proj">
       <div class="card">
+        <div class="art"><svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#0b2a5b"/><stop offset="1" stop-color="#071c3d"/></linearGradient></defs>
+  <rect width="320" height="120" rx="10" fill="url(#g1)"/>
+  <path d="M0 92 L320 92" stroke="#3b5a8c" stroke-width="1"/>
+  <g fill="none" stroke="#c9a227" stroke-width="2"><path d="M40 92 v-30 h26 v30"/><path d="M130 92 v-30 h26 v30"/><path d="M220 92 v-30 h26 v30"/></g>
+  <g fill="#c9a227"><rect x="42" y="66" width="22" height="10" rx="2"/><rect x="132" y="66" width="22" height="10" rx="2"/><rect x="222" y="66" width="22" height="10" rx="2"/></g>
+  <g stroke="#7ea1d6" stroke-width="1.5" stroke-dasharray="4 3" fill="none"><path d="M53 58 Q98 20 143 58"/><path d="M143 58 Q188 20 233 58"/></g>
+  <g fill="#fff"><circle cx="53" cy="30" r="4"/><circle cx="143" cy="26" r="4"/><circle cx="233" cy="30" r="4"/></g>
+  <g stroke="#fff" stroke-width="1" fill="none" opacity=".8"><path d="M53 26 v-8 M143 22 v-8 M233 26 v-8"/><path d="M47 14 a8 8 0 0 1 12 0 M137 10 a8 8 0 0 1 12 0 M227 14 a8 8 0 0 1 12 0"/></g>
+  <text x="296" y="112" fill="#7ea1d6" font-size="9" font-family="Inter,Arial" text-anchor="end">shards</text>
+</svg></div>
         <span class="status">Accepted 2026 &middot; Springer</span>
         <h3>Blockchain-enabled 5G vehicular networks</h3>
-        <p>Secure and scalable design for 5G vehicular networks using federated trust-aware sharding and cross-shard authentication, so vehicles can be authenticated across shards without a central authority and without the ledger becoming the bottleneck.</p>
-        <div class="venue"><em>Cluster Computing</em> (Springer), accepted September 2026 &middot; <a href="https://doi.org/10.1007/s10586-026-06593-w" target="_blank" rel="noopener">10.1007/s10586-026-06593-w</a> &middot; <a href="https://doi.org/10.21203/rs.3.rs-8172343/v1" target="_blank" rel="noopener">preprint</a></div>
+        <p>Federated trust-aware sharding and cross-shard authentication, so vehicles are authenticated across shards without a central authority.</p>
+        <div class="venue"><em>Cluster Computing</em> (Springer), 2026 &middot; <a href="https://doi.org/10.1007/s10586-026-06593-w" target="_blank" rel="noopener">DOI</a> &middot; <a href="https://doi.org/10.21203/rs.3.rs-8172343/v1" target="_blank" rel="noopener">preprint</a></div>
       </div>
       <div class="card">
+        <div class="art"><svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="320" height="120" rx="10" fill="#0b2a5b"/>
+  <g stroke="#c9a227" stroke-width="2" fill="none"><path d="M40 60 h60"/><path d="M220 60 h60"/><path d="M100 60 Q160 20 220 60"/><path d="M100 60 Q160 100 220 60" stroke-dasharray="5 4" stroke="#7ea1d6"/></g>
+  <g fill="#fff"><rect x="20" y="48" width="24" height="24" rx="4"/><rect x="276" y="48" width="24" height="24" rx="4"/></g>
+  <g fill="#c9a227"><circle cx="100" cy="60" r="7"/><circle cx="220" cy="60" r="7"/></g>
+  <circle cx="160" cy="40" r="10" fill="#071c3d" stroke="#c9a227" stroke-width="2"/>
+  <path d="M155 40 l4 4 l7 -8" stroke="#c9a227" stroke-width="2" fill="none"/>
+  <text x="160" y="93" fill="#7ea1d6" font-size="9" font-family="Inter,Arial" text-anchor="middle">relayer omission</text>
+  <text x="32" y="86" fill="#7ea1d6" font-size="9" font-family="Inter,Arial" text-anchor="middle">chain A</text>
+  <text x="288" y="86" fill="#7ea1d6" font-size="9" font-family="Inter,Arial" text-anchor="middle">chain B</text>
+</svg></div>
         <span class="status">Accepted 2026 &middot; IEEE BCCA</span>
         <h3>ASTRA: trustless cross-chain control</h3>
-        <p>Stable and omission-resilient control for cross-chain services: a controller that keeps cross-chain batching stable when relayers drop messages or go quiet, without trusting any single party. Accepted at IEEE BCCA 2026; an extended journal version with a full reproducibility artifact is in preparation.</p>
-        <div class="venue">With Laaziz Lahlou, Farid Na&iuml;t-Abdesselam and Nadjia Kara</div>
+        <p>A controller that keeps cross-chain batching stable when relayers drop messages or go quiet, without trusting any single party.</p>
+        <div class="venue">IEEE BCCA 2026, with L. Lahlou, F. Na&iuml;t-Abdesselam and N. Kara &middot; journal version in preparation</div>
       </div>
       <div class="card">
+        <div class="art"><svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="320" height="120" rx="10" fill="#071c3d"/>
+  <rect x="24" y="30" width="180" height="60" rx="6" fill="none" stroke="#7ea1d6" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <g fill="#c9a227"><rect x="34" y="44" width="30" height="32" rx="3"/><rect x="72" y="44" width="30" height="32" rx="3"/><rect x="110" y="44" width="30" height="32" rx="3" opacity=".7"/><rect x="148" y="44" width="30" height="32" rx="3" opacity=".45"/></g>
+  <path d="M204 60 h40" stroke="#fff" stroke-width="2"/><path d="M238 54 l8 6 l-8 6" fill="none" stroke="#fff" stroke-width="2"/>
+  <rect x="250" y="40" width="46" height="40" rx="5" fill="#0b2a5b" stroke="#c9a227" stroke-width="2"/>
+  <g stroke="#c9a227" stroke-width="1.5" fill="none"><path d="M262 60 h22 M273 49 v22"/></g>
+  <circle cx="60" cy="20" r="9" fill="#c9a227"/><path d="M60 11 v4 M60 25 v4 M51 20 h4 M65 20 h4" stroke="#071c3d" stroke-width="2"/>
+  <text x="114" y="104" fill="#7ea1d6" font-size="9" font-family="Inter,Arial" text-anchor="middle">mempool window</text>
+  <text x="273" y="98" fill="#7ea1d6" font-size="9" font-family="Inter,Arial" text-anchor="middle">block</text>
+</svg></div>
         <span class="status">2026 &middot; IEEE ICACT</span>
         <h3>Q-MEMShield: quantum-resilient mempool</h3>
-        <p>A mempool architecture for the day a quantum computer can derive a private key from a public one during the seconds a transaction spends waiting to be mined. Follow-on work derives exposure bounds for these "on-spend" attacks and shows why blanket post-quantum migration can endanger the accounts that cannot move.</p>
+        <p>Protects a transaction during the seconds it waits to be mined, when a quantum attacker could derive its key. Follow-on work bounds the exposure.</p>
         <div class="venue">IEEE ICACT 2026, with co-authors at STC Saudi Arabia &middot; journal extension in preparation</div>
       </div>
       <div class="card">
+        <div class="art"><svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="320" height="120" rx="10" fill="#0b2a5b"/>
+  <g fill="#fff"><circle cx="40" cy="30" r="6"/><circle cx="40" cy="60" r="6"/><circle cx="40" cy="90" r="6"/><circle cx="90" cy="30" r="6"/><circle cx="90" cy="60" r="6" fill="#c9a227"/><circle cx="90" cy="90" r="6"/></g>
+  <g stroke="#7ea1d6" stroke-width="1.2" fill="none"><path d="M46 30 h38 M46 60 h38 M46 90 h38 M96 30 L150 60 M96 60 L150 60 M96 90 L150 60"/></g>
+  <circle cx="150" cy="60" r="16" fill="#071c3d" stroke="#c9a227" stroke-width="2"/>
+  <text x="150" y="64" fill="#c9a227" font-size="11" font-family="Inter,Arial" text-anchor="middle" font-weight="700">Q</text>
+  <path d="M166 60 h40" stroke="#fff" stroke-width="2"/><path d="M200 54 l8 6 l-8 6" fill="none" stroke="#fff" stroke-width="2"/>
+  <g fill="#c9a227"><rect x="216" y="40" width="26" height="40" rx="3"/><rect x="248" y="40" width="26" height="40" rx="3"/><rect x="280" y="40" width="26" height="40" rx="3"/></g>
+  <text x="65" y="112" fill="#7ea1d6" font-size="9" font-family="Inter,Arial" text-anchor="middle">data sources</text>
+  <text x="261" y="98" fill="#7ea1d6" font-size="9" font-family="Inter,Arial" text-anchor="middle">on chain</text>
+</svg></div>
         <span class="status">2023&ndash;2024 &middot; Oracles</span>
         <h3>Trust in decentralised blockchain oracles</h3>
-        <p>Oracles bring real-world data on chain, and they are the weakest link in most smart-contract systems. This work applies asymmetric Byzantine quorums so that an oracle network tolerates untrusted data sources without a single trusted aggregator.</p>
-        <div class="venue">IEEE SoftCOM 2023, extended to a journal article &middot; <a href="https://arxiv.org/abs/2401.00175" target="_blank" rel="noopener">arXiv 2401.00175</a></div>
+        <p>Asymmetric Byzantine quorums let an oracle network tolerate untrusted data sources without a single trusted aggregator.</p>
+        <div class="venue">IEEE SoftCOM 2023 and journal extension &middot; <a href="https://arxiv.org/abs/2401.00175" target="_blank" rel="noopener">arXiv 2401.00175</a></div>
       </div>
       <div class="card">
+        <div class="art"><svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="320" height="120" rx="10" fill="#071c3d"/>
+  <g fill="none" stroke="#7ea1d6" stroke-width="1.5"><rect x="24" y="22" width="272" height="22" rx="4"/><rect x="24" y="52" width="272" height="22" rx="4"/><rect x="24" y="82" width="272" height="22" rx="4"/></g>
+  <text x="34" y="37" fill="#7ea1d6" font-size="9" font-family="Inter,Arial">execution</text>
+  <text x="34" y="67" fill="#7ea1d6" font-size="9" font-family="Inter,Arial">consensus</text>
+  <text x="34" y="97" fill="#7ea1d6" font-size="9" font-family="Inter,Arial">data</text>
+  <g fill="#c9a227"><rect x="110" y="26" width="34" height="14" rx="2"/><rect x="150" y="26" width="34" height="14" rx="2"/><rect x="190" y="26" width="34" height="14" rx="2"/><rect x="230" y="26" width="34" height="14" rx="2"/></g>
+  <g fill="#fff"><circle cx="127" cy="63" r="4"/><circle cx="167" cy="63" r="4"/><circle cx="207" cy="63" r="4"/><circle cx="247" cy="63" r="4"/></g>
+  <g fill="#c9a227" opacity=".8"><rect x="110" y="87" width="154" height="12" rx="2"/></g>
+</svg></div>
         <span class="status">2023&ndash;2025 &middot; Scalability</span>
         <h3>Sharded and layered blockchain architectures</h3>
-        <p>The PhD line of work: heuristic sharding to load-balance DNS across a blockchain, layered architectures that separate consensus from execution, and optimised load balancing among shards, each measured against throughput and latency rather than asserted.</p>
+        <p>Heuristic sharding for DNS load balancing, layered designs that separate consensus from execution, and optimised load balancing among shards.</p>
         <div class="venue"><a href="https://doi.org/10.1109/BCCA58897.2023.10338848" target="_blank" rel="noopener">IEEE BCCA 2023</a> &middot; <a href="https://doi.org/10.1109/CommNet60167.2023.10365275" target="_blank" rel="noopener">IEEE CommNet 2023</a> &middot; <em>Cluster Computing</em> 2025</div>
       </div>
       <div class="card">
+        <div class="art"><svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="320" height="120" rx="10" fill="#0b2a5b"/>
+  <g fill="#c9a227"><rect x="60" y="48" width="36" height="24" rx="3"/><rect x="108" y="48" width="36" height="24" rx="3"/><rect x="156" y="48" width="36" height="24" rx="3"/><rect x="204" y="48" width="36" height="24" rx="3"/></g>
+  <g stroke="#fff" stroke-width="2"><path d="M96 60 h12 M144 60 h12 M192 60 h12"/></g>
+  <g fill="none" stroke="#7ea1d6" stroke-width="1.5"><path d="M78 48 v-18 h48 v18"/><path d="M174 48 v-18 h48 v18"/></g>
+  <path d="M40 20 l20 -8 l20 8 l-20 8 z" fill="#fff"/><path d="M48 24 v10 a12 6 0 0 0 24 0 v-10" fill="none" stroke="#fff" stroke-width="2"/>
+  <text x="150" y="98" fill="#7ea1d6" font-size="9" font-family="Inter,Arial" text-anchor="middle">Universit&#233; Paris Cit&#233; &#183; 2020&#8211;2023</text>
+</svg></div>
         <span class="status">2020&ndash;2023 &middot; Doctorate</span>
         <h3>PhD in Computer Science (Blockchain)</h3>
-        <p>Universit&eacute; Paris Cit&eacute;, Paris. Thesis work on scaling blockchain systems through sharding and layered design while preserving Byzantine fault tolerance.</p>
-        <div class="venue">Universit&eacute; Paris Cit&eacute;, 2020&ndash;2023</div>
+        <p>Scaling blockchain systems through sharding and layered design while preserving Byzantine fault tolerance.</p>
+        <div class="venue">Universit&eacute; Paris Cit&eacute;, Paris</div>
       </div>
     </div>
     <div class="offer">
       <div>
         <h3>Blockchain advisory for organisations</h3>
-        <p>Most blockchain proposals fail on architecture, not on cryptography. I help organisations decide whether a ledger is the right tool at all, and if it is, design one that will still be running in five years.</p>
+        <p>Most blockchain proposals fail on architecture, not cryptography. I help organisations decide whether a ledger is the right tool, and design one that lasts.</p>
       </div>
       <ul>
         <li>Feasibility and architecture review of blockchain proposals and vendor pitches</li>
@@ -396,7 +459,7 @@
   <div class="wrap">
     <span class="eyebrow">Research</span>
     <h2>Selected publications</h2>
-    <p class="intro">Peer-reviewed work in blockchain scalability, decentralised trust and secure distributed systems, published with IEEE and Springer. Full list on <a href="https://scholar.google.com/citations?user=wD9jqwQAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.</p>
+    <p class="intro">Blockchain scalability, decentralised trust and secure distributed systems, with IEEE and Springer. Full list on <a href="https://scholar.google.com/citations?user=wD9jqwQAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.</p>
     <ul class="pubs">
       <li>
         <div class="title">Secure and Scalable Blockchain-Enabled 5G Vehicular Networks Using Federated Trust-Aware Sharding and Cross-Shard Authentication</div>
@@ -431,7 +494,7 @@
     <div>
       <span class="eyebrow">Contact</span>
       <h2>Let's talk about your next project</h2>
-      <p>Tell me what you are trying to achieve and where it is stuck. I reply personally, usually within one working day. Based in Lahore, Pakistan; available for remote and on-site work internationally.</p>
+      <p>Tell me what you are trying to achieve and where it is stuck. I reply personally, usually within one working day. Remote or on site, worldwide.</p>
       <ul class="contact-list details">
         <li><span class="k">Email</span><a href="mailto:fahad@frenchresearcher.com">fahad@frenchresearcher.com</a></li>
         <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/fahad-rahman-924157167" target="_blank" rel="noopener">linkedin.com/in/fahad-rahman-924157167</a></li>
