@@ -136,6 +136,16 @@
   .pubs .title { font-weight: 600; color: var(--ink); }
   .pubs .venue { color: var(--muted); font-size: .92rem; }
 
+  /* Testimonials */
+  .quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; margin-top: 36px; }
+  .quote { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 28px 24px; position: relative; }
+  .quote::before { content: "C"; position: absolute; top: 8px; left: 22px; font-family: "Source Serif 4", Georgia, serif; font-size: 4rem; line-height: 1; color: var(--accent); opacity: .6; }
+  .quote blockquote { margin: 26px 0 18px; font-family: "Source Serif 4", Georgia, serif; font-size: 1.08rem; line-height: 1.55; color: var(--ink); }
+  .quote .who { display: flex; flex-direction: column; gap: 2px; font-size: .9rem; }
+  .quote .who b { color: var(--navy); }
+  .quote .who span { color: var(--muted); }
+  .quote .src { margin-top: 10px; font-size: .78rem; color: var(--muted); }
+
   /* Contact */
   .contact { background: var(--navy-deep); color: #fff; }
   .contact h2 { color: #fff; }
@@ -193,6 +203,7 @@
         <li><a href="#work">Track record</a></li>
         <li><a href="#blockchain">Blockchain</a></li>
         <li><a href="#research">Research</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
         <li class="ext"><a href="https://scholar.google.com/citations?user=wD9jqwQAAAAJ" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 3 1 11l4 2.4V19l7 3.6 7-3.6v-5.6L23 11 12 3zm0 2.4L19.6 11 12 15.6 4.4 11 12 5.4zM7 14.6l5 3 5-3v3.2l-5 2.6-5-2.6v-3.2z"/></svg><span>Scholar</span></a></li>
         <li class="ext"><a href="https://www.linkedin.com/in/fahad-rahman-924157167" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9z"/></svg><span>LinkedIn</span></a></li>
         <li><a class="cta" href="#contact">Work with me</a></li>
@@ -491,6 +502,20 @@
         <div class="venue">IEEE International Conference on Software, Telecommunications and Computer Networks (SoftCOM), 2023</div>
       </li>
     </ul>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="wrap">
+    <span class="eyebrow">Testimonials</span>
+    <h2>What people say</h2>
+    <div class="quotes">
+      <div class="quote">
+        <blockquote>An accomplished academician, researcher, and technology professional with exceptional teaching, research, leadership, and communication skills. His dedication and commitment significantly contributed to the University's academic, research, and professional development objectives.</blockquote>
+        <div class="who"><b>Kaukab J. Zuberi</b><span>Associate Dean Social Sciences, Lahore Garrison University</span></div>
+        <div class="src">From the University's service certificate, August 2026</div>
+      </div>
+    </div>
   </div>
 </section>
 
