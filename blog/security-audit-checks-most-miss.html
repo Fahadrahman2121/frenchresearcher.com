@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Six checks a security audit should make that most audits skip | Dr Fahad Rahman</title>
+<meta name="description" content="Lessons from auditing a whole estate: the findings that only appear when you cross-reference systems, and the ones that hide behind a clean-looking report.">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#0b2a5b">
+<meta property="og:title" content="Six checks a security audit should make that most audits skip">
+<meta property="og:description" content="Lessons from auditing a whole estate: the findings that only appear when you cross-reference systems, and the ones that hide behind a clean-looking report.">
+<meta property="og:image" content="https://frenchresearcher.com/photo.jpg">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#0b2a5b; --navy-deep:#071c3d; --accent:#c9a227; --ink:#1a2233; --muted:#5b6577; --line:#e3e8f0; --bg-soft:#f5f7fb; --radius:12px; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); line-height:1.7; background:#fff; font-size:16px; }
+  header.nav { position:sticky; top:0; z-index:10; background:rgba(255,255,255,.96); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); }
+  header.nav .wrap { max-width:1120px; margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between; }
+  .brand { font-family:"Source Serif 4",Georgia,serif; font-weight:700; color:var(--navy); text-decoration:none; font-size:1.1rem; }
+  .brand span { color:var(--accent); }
+  header.nav nav a { color:var(--ink); text-decoration:none; font-weight:500; font-size:.92rem; margin-left:18px; }
+  header.nav nav a.cta { background:var(--navy); color:#fff; padding:9px 16px; border-radius:8px; }
+  main { max-width:760px; margin:0 auto; padding:56px 24px 80px; }
+  .eyebrow { display:inline-block; font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:.75rem; }
+  h1 { font-family:"Source Serif 4",Georgia,serif; color:var(--navy); font-size:clamp(1.8rem,4vw,2.5rem); line-height:1.2; margin:0 0 .4em; }
+  h2 { font-family:"Source Serif 4",Georgia,serif; color:var(--navy); font-size:1.35rem; margin:1.8em 0 .5em; }
+  .meta { color:var(--muted); font-size:.9rem; margin-bottom:2.2em; }
+  article p { margin:0 0 1.2em; font-size:1.05rem; }
+  article ul, article ol { margin:0 0 1.2em; padding-left:22px; }
+  article li { margin:.35em 0; }
+  article blockquote { margin:1.4em 0; padding:14px 20px; border-left:4px solid var(--accent); background:var(--bg-soft); border-radius:0 8px 8px 0; font-family:"Source Serif 4",Georgia,serif; font-size:1.08rem; }
+  .list { list-style:none; padding:0; margin:36px 0 0; }
+  .list li { border-top:1px solid var(--line); padding:22px 0; }
+  .list li:last-child { border-bottom:1px solid var(--line); }
+  .list .date { font-size:.82rem; color:var(--muted); letter-spacing:.04em; text-transform:uppercase; }
+  .list h2 { margin:6px 0 6px; font-size:1.3rem; }
+  .list h2 a { color:var(--navy); text-decoration:none; }
+  .list h2 a:hover { text-decoration:underline; }
+  .list p { margin:0; color:var(--muted); }
+  .tail { margin-top:48px; padding-top:22px; border-top:1px solid var(--line); display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:.95rem; }
+  .tail a { color:var(--navy); }
+  .author { margin-top:40px; display:flex; gap:16px; align-items:center; background:var(--bg-soft); border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px; }
+  .author img { width:64px; height:64px; border-radius:50%; object-fit:cover; border:3px solid var(--accent); }
+  .author p { margin:0; font-size:.95rem; color:var(--muted); }
+  .author b { color:var(--navy); }
+  footer { border-top:1px solid var(--line); color:var(--muted); font-size:.85rem; background:var(--bg-soft); }
+  footer .wrap { max-width:1120px; margin:0 auto; padding:22px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+  footer a { color:inherit; }
+  @media (max-width:600px) { header.nav nav a:not(.cta) { display:none; } }
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="../">Dr Fahad Rahman<span>.</span></a>
+  <nav><a href="./">Blog</a><a href="../#blockchain">Blockchain</a><a href="../#research">Research</a><a class="cta" href="../#contact">Work with me</a></nav>
+</div></header>
+<main>
+<article>
+  <span class="eyebrow">Blog</span>
+  <h1>Six checks a security audit should make that most audits skip</h1>
+  <div class="meta">By Dr Fahad Rahman &middot; <time datetime="2026-09-13">13 September 2026</time></div>
+
+<p>I have spent this year auditing a complete estate: hypervisor cluster, edge firewall, directory, mail tenant and the switches between them. The most important findings were not the ones a scanner produces. They came from reading two systems side by side, and from refusing to accept a clean report until every unparsed item had been accounted for. Here are six checks that I now put at the top of every audit, because they are the ones I see skipped.</p>
+
+<h2>1. Cross-reference the firewall's bind account against the directory</h2>
+<p>A firewall that authenticates VPN users against Active Directory has a service account to do the lookup. Audit the firewall alone and the account looks fine. Audit the directory alone and one more member of Domain Admins looks unremarkable. Put the two together and you may find a domain administrator credential crossing the network on every VPN login, in cleartext if the bind is not over TLS. A lookup account needs no privilege at all. Demote it first; fix the transport second.</p>
+
+<h2>2. Check the lockout threshold, not just the password length</h2>
+<p>Password policy reviews fixate on length and complexity. The setting that decides whether an exposed login page can be guessed at leisure is the lockout threshold, and a value of zero means unlimited attempts. Combine that with any authentication portal reachable from the internet and the password policy is decorative.</p>
+
+<h2>3. Look for reversible encryption on ordinary accounts</h2>
+<p>One bit in a user object's control flags tells the directory to store the password in a form that can be turned back into plaintext. It gets set for compatibility with some VDI and legacy products and then never reviewed. Test the flag on <em>every</em> enabled account, not only the privileged ones. Finding it on a couple of hundred users is not unusual.</p>
+
+<h2>4. Read firewall rules against their hit counters</h2>
+<p>A static analysis will tell you a rule is shadowed or unreachable. The hit counter tells you whether the device agrees. On one audit four "unreachable" rules turned out to carry tens of millions of hits, because the rule above them narrowed by application rather than by port and the analyser could not tell the difference. Never report a rule as dead while its counter is moving.</p>
+
+<h2>5. Treat every DHCP address in a security object as a mistake</h2>
+<p>Allow-lists fill up with laptop addresses added "just for today". On a network with short leases that address belongs to somebody else within the hour, and the exception now applies to whichever device drew it. Twice in one morning I found an unrelated device inheriting full access this way. Reserve the address or use identity; never list a lease.</p>
+
+<h2>6. Inventory operating-system builds from the directory, not from the patching tool</h2>
+<p>Every computer object records the build it last reported. Pulling that field across the estate is a five-minute query and it surfaces the machines the patching tool has quietly stopped seeing. A large share of desktops still on a release that left support years ago is a common result, and nobody had a report that showed it.</p>
+
+<h2>The underlying rule</h2>
+<p>An audit tool that cannot see something reports it as absent, and absent reads as fine. So every report I produce carries an explicit "unknown" list: the files that were missing, the sections that would not parse, the systems that could not be reached. A clean report with an empty unknown list is credible. A clean report with no unknown list at all is the one to worry about.</p>
+
+</article>
+<div class="author"><img src="../photo.jpg" alt="Dr Fahad Rahman"><p><b>Dr Fahad Rahman</b> is an independent IT and cybersecurity consultant with a PhD in blockchain systems from Universit&eacute; Paris Cit&eacute;. <a href="../#contact">Get in touch</a>.</p></div>
+<div class="tail"><a href="./">&larr; All posts</a><a href="../#contact">Work with me &rarr;</a></div>
+</main>
+<footer><div class="wrap"><span>&copy; <span id="yr"></span> Dr Fahad Rahman. All rights reserved.</span><span><a href="../privacy.html">Privacy</a> &middot; frenchresearcher.com</span></div></footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
