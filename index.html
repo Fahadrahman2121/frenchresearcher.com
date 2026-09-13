@@ -99,6 +99,24 @@
   .card .num { font-family: "Source Serif 4", Georgia, serif; color: var(--accent); font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
   .card p { color: var(--muted); font-size: .95rem; margin: 0; }
 
+  /* Pricing */
+  .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 36px; }
+  .tier { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 26px; display: flex; flex-direction: column; }
+  .tier.featured { border-color: var(--accent); box-shadow: 0 10px 30px rgba(11,42,91,.08); }
+  .tier .name { font-family: "Source Serif 4", Georgia, serif; font-size: 1.25rem; color: var(--navy); font-weight: 700; }
+  .tier .for { color: var(--muted); font-size: .92rem; margin: 4px 0 18px; }
+  .tier .price { font-family: "Source Serif 4", Georgia, serif; font-size: 2rem; color: var(--navy); line-height: 1.1; }
+  .tier .price small { font-family: "Inter", system-ui, sans-serif; font-size: .85rem; color: var(--muted); font-weight: 500; }
+  .tier .unit { color: var(--muted); font-size: .88rem; margin-bottom: 18px; }
+  .tier ul { list-style: none; padding: 0; margin: 0 0 22px; flex: 1; }
+  .tier li { padding: 7px 0 7px 26px; position: relative; font-size: .93rem; border-top: 1px solid var(--line); }
+  .tier li::before { content: "✓"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .tier .btn { text-align: center; }
+  .tier .btn-outline { border: 1.5px solid var(--navy); color: var(--navy); }
+  .tier .btn-outline:hover { background: var(--navy); color: #fff; }
+  .pricing-note { margin-top: 22px; font-size: .88rem; color: var(--muted); max-width: 80ch; }
+  @media (max-width: 860px) { .tiers { grid-template-columns: 1fr; } }
+
   /* About */
   .about .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: start; }
   .facts { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
@@ -222,6 +240,7 @@
       <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
       <ul id="menu">
         <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#work">Track record</a></li>
         <li><a href="#blockchain">Blockchain</a></li>
@@ -301,7 +320,58 @@
   </div>
 </section>
 
-<section class="soft about" id="about">
+<section class="soft" id="pricing">
+  <div class="wrap">
+    <span class="eyebrow">Pricing</span>
+    <h2>Three ways to work together</h2>
+    <p class="intro">Clear scope, clear price, no surprises. Every engagement starts with a free 30-minute call to see whether I am the right person for the problem.</p>
+    <div class="tiers">
+      <div class="tier">
+        <div class="name">Advisory day</div>
+        <div class="for">For a decision that needs an expert in the room</div>
+        <div class="price"><small>from</small> USD 750</div>
+        <div class="unit">per working day, remote</div>
+        <ul>
+          <li>Architecture or security review of a proposal, vendor pitch or design</li>
+          <li>Board or leadership briefing on a technology decision</li>
+          <li>Written findings and recommendations the same week</li>
+          <li>On site in Lahore, Paris or elsewhere at day rate plus travel</li>
+        </ul>
+        <a class="btn btn-outline" href="#contact">Book a day</a>
+      </div>
+      <div class="tier featured">
+        <div class="name">Fixed-scope project</div>
+        <div class="for">For a defined piece of work with a defined result</div>
+        <div class="price">Quoted</div>
+        <div class="unit">fixed price agreed before work starts</div>
+        <ul>
+          <li>Whole-estate security audit with graded findings and remediation plan</li>
+          <li>Secure hosting design and acceptance gate for a vendor-built system</li>
+          <li>Source-code and dependency review before production</li>
+          <li>ERP or platform implementation governance for a phase</li>
+          <li>Typically two to eight weeks, milestones and hand-over included</li>
+        </ul>
+        <a class="btn btn-primary" href="#contact">Request a quote</a>
+      </div>
+      <div class="tier">
+        <div class="name">Retainer</div>
+        <div class="for">For ongoing leadership without a full-time hire</div>
+        <div class="price">Monthly</div>
+        <div class="unit">a block of days each month at a reduced day rate</div>
+        <ul>
+          <li>Fractional CIO or CISO: strategy, governance, vendor management</li>
+          <li>Standing security review of changes before they go live</li>
+          <li>Priority response and a monthly written report to leadership</li>
+          <li>Three-month minimum, then rolling</li>
+        </ul>
+        <a class="btn btn-outline" href="#contact">Discuss a retainer</a>
+      </div>
+    </div>
+    <p class="pricing-note">Prices exclude taxes and are invoiced in USD; PKR and EUR invoicing available. Public-sector, academic and non-profit organisations: ask about reduced rates. Blockchain research collaborations and co-authored work are agreed separately.</p>
+  </div>
+</section>
+
+<section class="about" id="about">
   <div class="wrap">
     <div>
       <span class="eyebrow">About</span>
