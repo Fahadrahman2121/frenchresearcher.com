@@ -135,6 +135,19 @@
   .timeline h3 { margin: 4px 0 6px; }
   .timeline p { color: var(--muted); font-size: .95rem; margin: 0; max-width: 70ch; }
 
+  /* Portfolio */
+  .folio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 36px; }
+  .work { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 24px 20px; display: flex; flex-direction: column; border-top: 4px solid var(--navy); }
+  .work .cat { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .work h3 { margin: 6px 0 8px; font-size: 1.12rem; }
+  .work .client { font-size: .88rem; color: var(--muted); margin-bottom: 12px; }
+  .work p { color: var(--ink); font-size: .93rem; margin: 0 0 10px; }
+  .work .result { flex: 1; font-size: .93rem; color: var(--muted); margin: 0 0 14px; padding-left: 12px; border-left: 3px solid var(--accent); }
+  .work .stack { display: flex; flex-wrap: wrap; gap: 6px; }
+  .work .stack span { font-size: .74rem; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 999px; padding: 2px 9px; color: var(--navy); }
+  @media (max-width: 1000px) { .folio { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 700px) { .folio { grid-template-columns: 1fr; } }
+
   /* Blockchain projects */
   .proj { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 36px; }
   .proj .card { display: flex; flex-direction: column; padding-top: 0; overflow: hidden; }
@@ -243,8 +256,8 @@
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#work">Track record</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#blockchain">Blockchain</a></li>
-        <li><a href="#research">Research</a></li>
         <li><a href="blog/">Blog</a></li>
         <li class="ext"><a href="https://scholar.google.com/citations?user=wD9jqwQAAAAJ" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 3 1 11l4 2.4V19l7 3.6 7-3.6v-5.6L23 11 12 3zm0 2.4L19.6 11 12 15.6 4.4 11 12 5.4zM7 14.6l5 3 5-3v3.2l-5 2.6-5-2.6v-3.2z"/></svg><span>Scholar</span></a></li>
         <li class="ext"><a href="https://www.linkedin.com/in/fahad-rahman-924157167" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9z"/></svg><span>LinkedIn</span></a></li>
@@ -443,6 +456,64 @@
   </div>
 </section>
 
+<section class="soft" id="projects">
+  <div class="wrap">
+    <span class="eyebrow">Projects</span>
+    <h2>Selected projects</h2>
+    <p class="intro">Systems I have designed, built or led to production. Client names appear where the work is already public; the rest are described by sector.</p>
+    <div class="folio">
+      <div class="work">
+        <div class="cat">Internal platform</div>
+        <h3>Staff services portal: helpdesk, attendance and canteen</h3>
+        <div class="client">Punjab Agriculture, Food and Drug Authority, 2026</div>
+        <p>Designed and built a single portal for every domain user: IT help desk with resolution tracking, HR attendance fed by biometric terminals, canteen booking with cash settlement, notices and appointments.</p>
+        <div class="result">Replaced an off-the-shelf ticketing tool; live for all staff, with single sign-on against the directory.</div>
+        <div class="stack"><span>Django</span><span>Active Directory</span><span>LDAPS</span><span>ZKTeco</span><span>Linux</span></div>
+      </div>
+      <div class="work">
+        <div class="cat">Security operations</div>
+        <h3>Continuous read-only security audit of a whole estate</h3>
+        <div class="client">Government regulator, 2026</div>
+        <p>A daily scan that pulls the virtualisation cluster, edge firewall, directory and backup server, cross-references them, grades findings and emails critical ones the same morning.</p>
+        <div class="result">Caught a domain-admin service account on the firewall, unlogged VM deletions and stalled backups that no single tool reported.</div>
+        <div class="stack"><span>PowerShell</span><span>FusionCompute API</span><span>Huawei USG</span><span>LDAP</span><span>Veeam API</span><span>Microsoft Graph</span></div>
+      </div>
+      <div class="work">
+        <div class="cat">Secure hosting</div>
+        <h3>Hosting design and release gate for a vendor-built system</h3>
+        <div class="client">Government regulator, 2026</div>
+        <p>Reviewed the vendor’s source, then designed five isolated network zones, a restricted vendor VPN and a blocking release gate: code review, secrets scan, dependency audit and built-output checks.</p>
+        <div class="result">Committed secrets and insecure defaults found before production; nothing deploys until the gate is green.</div>
+        <div class="stack"><span>.NET 8</span><span>Angular</span><span>SQL Server</span><span>Firewall zoning</span><span>SSL VPN</span><span>DevSecOps</span></div>
+      </div>
+      <div class="work">
+        <div class="cat">E-commerce</div>
+        <h3>First online book-selling platform for a school network</h3>
+        <div class="client">The City School Network, 2024–2025</div>
+        <p>Led the design, architecture and launch of the organisation’s first online store, so parents could buy books online for the first time in its history.</p>
+        <div class="result">Over PKR 100 million in online sales in its first period.</div>
+        <div class="stack"><span>E-commerce</span><span>Payments</span><span>Oracle EBS integration</span><span>Cloud</span></div>
+      </div>
+      <div class="work">
+        <div class="cat">Customer experience</div>
+        <h3>Customer care management system</h3>
+        <div class="client">The City School Network, 2024–2025</div>
+        <p>A centralised platform for complaints, enquiries and service requests across the network, with routing, escalation and reporting for management.</p>
+        <div class="result">Single view of every case; measurable resolution times for the first time.</div>
+        <div class="stack"><span>Enterprise application</span><span>Workflow</span><span>Reporting</span><span>Integration</span></div>
+      </div>
+      <div class="work">
+        <div class="cat">Cybersecurity</div>
+        <h3>CVE management software for security operations</h3>
+        <div class="client">Alfabet-group and Zyneas Technology, France, 2020–2022</div>
+        <p>Designed and developed a tool to track published vulnerabilities against an estate, coordinate mitigation and evidence closure, used in commercial security operations.</p>
+        <div class="result">Vulnerability handling moved from spreadsheets to a tracked, auditable process.</div>
+        <div class="stack"><span>Vulnerability management</span><span>CVE</span><span>Security operations</span><span>Web application</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="blockchain">
   <div class="wrap">
     <span class="eyebrow">Blockchain</span>
@@ -598,7 +669,7 @@
   </div>
 </section>
 
-<section class="soft" id="blog">
+<section id="blog">
   <div class="wrap">
     <span class="eyebrow">Blog</span>
     <h2>Notes from the work</h2>
@@ -620,7 +691,7 @@
   </div>
 </section>
 
-<section id="testimonials">
+<section class="soft" id="testimonials">
   <div class="wrap">
     <span class="eyebrow">Testimonials</span>
     <h2>What people say</h2>
@@ -692,6 +763,7 @@
     </div>
     <nav class="flinks" aria-label="Footer">
       <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
       <a href="#blockchain">Blockchain</a>
       <a href="#research">Research</a>
       <a href="blog/">Blog</a>
