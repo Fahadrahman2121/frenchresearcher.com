@@ -102,6 +102,21 @@
   .timeline h3 { margin: 4px 0 6px; }
   .timeline p { color: var(--muted); font-size: .95rem; margin: 0; max-width: 70ch; }
 
+  /* Blockchain projects */
+  .proj { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 36px; }
+  .proj .card { display: flex; flex-direction: column; }
+  .proj .status { display: inline-block; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; color: var(--navy); background: var(--bg-soft); border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; margin-bottom: 12px; align-self: flex-start; }
+  .proj h3 { margin-bottom: 8px; }
+  .proj p { flex: 1; }
+  .proj .venue { margin-top: 14px; font-size: .85rem; color: var(--muted); }
+  .proj .venue a { color: var(--navy); }
+  .offer { margin-top: 40px; background: var(--navy); color: #fff; border-radius: var(--radius); padding: 28px 30px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: center; }
+  .offer h3 { color: #fff; margin: 0 0 8px; }
+  .offer p { color: #d6deeb; margin: 0; }
+  .offer ul { margin: 0; padding-left: 18px; color: #e6ecf5; font-size: .95rem; }
+  .offer li { margin: 4px 0; }
+  @media (max-width: 860px) { .proj, .offer { grid-template-columns: 1fr; } }
+
   /* Research */
   .pubs { list-style: none; padding: 0; margin: 28px 0 0; }
   .pubs li { border-top: 1px solid var(--line); padding: 16px 0; }
@@ -120,6 +135,21 @@
   .contact-list .k { color: var(--accent); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; min-width: 90px; }
   .contact-list a { color: #fff; text-decoration: none; font-weight: 500; }
   .contact-list a:hover { text-decoration: underline; }
+
+  /* Contact form */
+  .form { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius); padding: 26px; }
+  .form h3 { color: #fff; margin-top: 0; }
+  .form label { display: block; font-size: .85rem; color: #d6deeb; margin: 12px 0 6px; }
+  .form input, .form textarea { width: 100%; padding: 11px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.95); color: var(--ink); font: inherit; font-size: .95rem; }
+  .form textarea { min-height: 120px; resize: vertical; }
+  .form input:focus, .form textarea:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+  .form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .form .btn { margin-top: 18px; width: 100%; text-align: center; border: 0; cursor: pointer; font-size: 1rem; }
+  .form .note { font-size: .8rem; color: #aab6c8; margin: 12px 0 0; }
+  .form .hp { position: absolute; left: -9999px; }
+  .contact .details { margin-top: 26px; }
+  .contact .wrap { align-items: start; }
+  @media (max-width: 860px) { .form .row { grid-template-columns: 1fr; } }
 
   footer { padding: 26px 0; font-size: .85rem; color: var(--muted); border-top: 1px solid var(--line); }
   footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
@@ -148,6 +178,7 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#work">Track record</a></li>
+        <li><a href="#blockchain">Blockchain</a></li>
         <li><a href="#research">Research</a></li>
         <li><a class="cta" href="#contact">Work with me</a></li>
       </ul>
@@ -158,7 +189,7 @@
 <section class="hero" id="top">
   <div class="wrap">
     <div>
-      <span class="eyebrow">Strategic IT &middot; Cybersecurity &middot; Digital Transformation</span>
+      <span class="eyebrow">Strategic IT &middot; Cybersecurity &middot; Blockchain &middot; Digital Transformation</span>
       <h1>Technology leadership for organisations that cannot afford to get it wrong.</h1>
       <p class="lede">I am Dr Fahad Rahman, an independent IT consultant with over twenty years in enterprise technology, ten of them at executive level, across government, education, telecom and multinational organisations. I help boards and leadership teams set technology strategy, secure what they run, and deliver the systems their business depends on.</p>
       <div class="btns">
@@ -284,19 +315,90 @@
   </div>
 </section>
 
+<section id="blockchain">
+  <div class="wrap">
+    <span class="eyebrow">Blockchain</span>
+    <h2>Blockchain research and projects</h2>
+    <p class="intro">My doctorate at Universit&eacute; Paris Cit&eacute; was on making blockchain systems scale without giving up trust. The work since then follows the same thread: sharding, cross-chain control, oracle trust and, most recently, what quantum computing does to a transaction while it waits in the mempool. Every project below has a peer-reviewed paper behind it, and the recent ones ship with a reproducible simulator.</p>
+    <div class="proj">
+      <div class="card">
+        <span class="status">Accepted 2026 &middot; Springer</span>
+        <h3>Blockchain-enabled 5G vehicular networks</h3>
+        <p>Secure and scalable design for 5G vehicular networks using federated trust-aware sharding and cross-shard authentication, so vehicles can be authenticated across shards without a central authority and without the ledger becoming the bottleneck.</p>
+        <div class="venue"><em>Cluster Computing</em> (Springer), accepted September 2026 &middot; <a href="https://doi.org/10.1007/s10586-026-06593-w" target="_blank" rel="noopener">10.1007/s10586-026-06593-w</a> &middot; <a href="https://doi.org/10.21203/rs.3.rs-8172343/v1" target="_blank" rel="noopener">preprint</a></div>
+      </div>
+      <div class="card">
+        <span class="status">Accepted 2026 &middot; IEEE BCCA</span>
+        <h3>ASTRA: trustless cross-chain control</h3>
+        <p>Stable and omission-resilient control for cross-chain services: a controller that keeps cross-chain batching stable when relayers drop messages or go quiet, without trusting any single party. Accepted at IEEE BCCA 2026; an extended journal version with a full reproducibility artifact is in preparation.</p>
+        <div class="venue">With Laaziz Lahlou, Farid Na&iuml;t-Abdesselam and Nadjia Kara</div>
+      </div>
+      <div class="card">
+        <span class="status">2026 &middot; IEEE ICACT</span>
+        <h3>Q-MEMShield: quantum-resilient mempool</h3>
+        <p>A mempool architecture for the day a quantum computer can derive a private key from a public one during the seconds a transaction spends waiting to be mined. Follow-on work derives exposure bounds for these "on-spend" attacks and shows why blanket post-quantum migration can endanger the accounts that cannot move.</p>
+        <div class="venue">IEEE ICACT 2026, with co-authors at STC Saudi Arabia &middot; journal extension in preparation</div>
+      </div>
+      <div class="card">
+        <span class="status">2023&ndash;2024 &middot; Oracles</span>
+        <h3>Trust in decentralised blockchain oracles</h3>
+        <p>Oracles bring real-world data on chain, and they are the weakest link in most smart-contract systems. This work applies asymmetric Byzantine quorums so that an oracle network tolerates untrusted data sources without a single trusted aggregator.</p>
+        <div class="venue">IEEE SoftCOM 2023, extended to a journal article &middot; <a href="https://arxiv.org/abs/2401.00175" target="_blank" rel="noopener">arXiv 2401.00175</a></div>
+      </div>
+      <div class="card">
+        <span class="status">2023&ndash;2025 &middot; Scalability</span>
+        <h3>Sharded and layered blockchain architectures</h3>
+        <p>The PhD line of work: heuristic sharding to load-balance DNS across a blockchain, layered architectures that separate consensus from execution, and optimised load balancing among shards, each measured against throughput and latency rather than asserted.</p>
+        <div class="venue"><a href="https://doi.org/10.1109/BCCA58897.2023.10338848" target="_blank" rel="noopener">IEEE BCCA 2023</a> &middot; <a href="https://doi.org/10.1109/CommNet60167.2023.10365275" target="_blank" rel="noopener">IEEE CommNet 2023</a> &middot; <em>Cluster Computing</em> 2025</div>
+      </div>
+      <div class="card">
+        <span class="status">2020&ndash;2023 &middot; Doctorate</span>
+        <h3>PhD in Computer Science (Blockchain)</h3>
+        <p>Universit&eacute; Paris Cit&eacute;, Paris. Thesis work on scaling blockchain systems through sharding and layered design while preserving Byzantine fault tolerance.</p>
+        <div class="venue">Universit&eacute; Paris Cit&eacute;, 2020&ndash;2023</div>
+      </div>
+    </div>
+    <div class="offer">
+      <div>
+        <h3>Blockchain advisory for organisations</h3>
+        <p>Most blockchain proposals fail on architecture, not on cryptography. I help organisations decide whether a ledger is the right tool at all, and if it is, design one that will still be running in five years.</p>
+      </div>
+      <ul>
+        <li>Feasibility and architecture review of blockchain proposals and vendor pitches</li>
+        <li>Consensus, sharding and cross-chain design for throughput at scale</li>
+        <li>Oracle and smart-contract trust models</li>
+        <li>Post-quantum readiness assessment for existing chains and wallets</li>
+        <li>Independent technical due diligence for regulators and investors</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <section class="soft" id="research">
   <div class="wrap">
     <span class="eyebrow">Research</span>
     <h2>Selected publications</h2>
-    <p class="intro">Research in blockchain scalability, decentralised trust and secure distributed systems, published with IEEE and Springer. Full list on <a href="https://scholar.google.com/citations?user=wD9jqwQAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.</p>
+    <p class="intro">Peer-reviewed work in blockchain scalability, decentralised trust and secure distributed systems, published with IEEE and Springer. Full list on <a href="https://scholar.google.com/citations?user=wD9jqwQAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.</p>
     <ul class="pubs">
       <li>
+        <div class="title">Secure and Scalable Blockchain-Enabled 5G Vehicular Networks Using Federated Trust-Aware Sharding and Cross-Shard Authentication</div>
+        <div class="venue">Cluster Computing (Springer), accepted 2026 &middot; <a href="https://doi.org/10.1007/s10586-026-06593-w" target="_blank" rel="noopener">doi:10.1007/s10586-026-06593-w</a></div>
+      </li>
+      <li>
+        <div class="title">Q-MEMShield: A Quantum-Resilient Mempool Architecture</div>
+        <div class="venue">IEEE ICACT 2026</div>
+      </li>
+      <li>
         <div class="title">Use of Asymmetric Byzantine Quorums to Overcome Trust Issues in Blockchain Oracles</div>
-        <div class="venue">Journal of Communications Software and Systems (JCOMSS), 2024</div>
+        <div class="venue">Journal article, 2024&ndash;2025 &middot; <a href="https://arxiv.org/abs/2401.00175" target="_blank" rel="noopener">arXiv:2401.00175</a></div>
       </li>
       <li>
         <div class="title">Scaling a Blockchain System for Load Balancing of DNS Servers Using Heuristic Sharding</div>
-        <div class="venue">IEEE International Conference on Blockchain Computing and Applications (BCCA), 2023</div>
+        <div class="venue">IEEE International Conference on Blockchain Computing and Applications (BCCA), 2023 &middot; <a href="https://doi.org/10.1109/BCCA58897.2023.10338848" target="_blank" rel="noopener">doi:10.1109/BCCA58897.2023.10338848</a></div>
+      </li>
+      <li>
+        <div class="title">Scaling a Blockchain System with Layered Architecture</div>
+        <div class="venue">IEEE International Conference on Communications and Networking (CommNet), 2023 &middot; <a href="https://doi.org/10.1109/CommNet60167.2023.10365275" target="_blank" rel="noopener">doi:10.1109/CommNet60167.2023.10365275</a></div>
       </li>
       <li>
         <div class="title">Asymmetric Byzantine Quorum Approach to Resolve Trust Issues in Decentralized Blockchain Oracles</div>
@@ -312,15 +414,46 @@
       <span class="eyebrow">Contact</span>
       <h2>Let's talk about your next project</h2>
       <p>Tell me what you are trying to achieve and where it is stuck. I reply personally, usually within one working day. Based in Lahore, Pakistan; available for remote and on-site work internationally.</p>
-      <a class="btn btn-primary" href="mailto:fahad@frenchresearcher.com?subject=Consulting%20enquiry">Email fahad@frenchresearcher.com</a>
+      <ul class="contact-list details">
+        <li><span class="k">Email</span><a href="mailto:fahad@frenchresearcher.com">fahad@frenchresearcher.com</a></li>
+        <li><span class="k">Phone</span><a href="tel:+923214496762">+92 321 4496762</a></li>
+        <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/fahad-rahman-924157167" target="_blank" rel="noopener">linkedin.com/in/fahad-rahman-924157167</a></li>
+        <li><span class="k">Scholar</span><a href="https://scholar.google.com/citations?user=wD9jqwQAAAAJ" target="_blank" rel="noopener">Google Scholar profile</a></li>
+        <li><span class="k">Location</span><span>Lahore, Pakistan</span></li>
+      </ul>
     </div>
-    <ul class="contact-list">
-      <li><span class="k">Email</span><a href="mailto:fahad@frenchresearcher.com">fahad@frenchresearcher.com</a></li>
-      <li><span class="k">Phone</span><a href="tel:+923214496762">+92 321 4496762</a></li>
-      <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/fahad-rahman-924157167" target="_blank" rel="noopener">linkedin.com/in/fahad-rahman-924157167</a></li>
-      <li><span class="k">Scholar</span><a href="https://scholar.google.com/citations?user=wD9jqwQAAAAJ" target="_blank" rel="noopener">Google Scholar profile</a></li>
-      <li><span class="k">Location</span><span>Lahore, Pakistan</span></li>
-    </ul>
+    <form class="form" action="https://formsubmit.co/fahad@frenchresearcher.com" method="POST">
+      <h3>Send a message</h3>
+      <input type="hidden" name="_subject" value="New enquiry from frenchresearcher.com">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://frenchresearcher.com/thanks.html">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+      <div class="row">
+        <div>
+          <label for="f-name">Your name</label>
+          <input id="f-name" type="text" name="name" required autocomplete="name">
+        </div>
+        <div>
+          <label for="f-org">Organisation</label>
+          <input id="f-org" type="text" name="organisation" autocomplete="organization">
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label for="f-email">Email</label>
+          <input id="f-email" type="email" name="email" required autocomplete="email">
+        </div>
+        <div>
+          <label for="f-phone">Phone (optional)</label>
+          <input id="f-phone" type="tel" name="phone" autocomplete="tel">
+        </div>
+      </div>
+      <label for="f-msg">What do you need help with?</label>
+      <textarea id="f-msg" name="message" required placeholder="A few lines about the organisation, the problem and the timeline."></textarea>
+      <button class="btn btn-primary" type="submit">Send message</button>
+      <p class="note">Your message goes straight to fahad@frenchresearcher.com. No mailing list, no sharing.</p>
+    </form>
   </div>
 </section>
 
