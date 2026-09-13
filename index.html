@@ -178,8 +178,15 @@
   .contact .wrap { align-items: start; }
   @media (max-width: 860px) { .form .row { grid-template-columns: 1fr; } }
 
-  footer { padding: 26px 0; font-size: .85rem; color: var(--muted); border-top: 1px solid var(--line); }
-  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  footer { padding: 34px 0 30px; font-size: .85rem; color: var(--muted); border-top: 1px solid var(--line); background: var(--bg-soft); }
+  footer .wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: start; }
+  footer .fbrand { font-family: "Source Serif 4", Georgia, serif; font-weight: 700; color: var(--navy); font-size: 1rem; margin-bottom: 6px; }
+  footer p { margin: 0 0 8px; max-width: 60ch; }
+  footer .flinks { display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: flex-end; }
+  footer .flinks a { color: var(--navy); text-decoration: none; font-weight: 500; }
+  footer .flinks a:hover { text-decoration: underline; }
+  footer .legal { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 14px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: .8rem; }
+  @media (max-width: 860px) { footer .wrap { grid-template-columns: 1fr; } footer .flinks { justify-content: flex-start; } }
 
   @media (max-width: 860px) {
     .hero .wrap, .about .wrap, .contact .wrap { grid-template-columns: 1fr; }
@@ -575,8 +582,24 @@
 
 <footer>
   <div class="wrap">
-    <span>&copy; <span id="yr"></span> Dr Fahad Rahman. All rights reserved.</span>
-    <span>frenchresearcher.com</span>
+    <div>
+      <div class="fbrand">Dr Fahad Rahman</div>
+      <p>Strategic IT, cybersecurity and blockchain consulting. Lahore, Pakistan, working remotely and on site worldwide.</p>
+      <p><strong>Privacy:</strong> this site sets no cookies and runs no analytics or tracking. If you use the contact form, what you type is relayed once to my mailbox and used only to reply to you. <a href="privacy.html">Full privacy note</a>.</p>
+    </div>
+    <nav class="flinks" aria-label="Footer">
+      <a href="#services">Services</a>
+      <a href="#blockchain">Blockchain</a>
+      <a href="#research">Research</a>
+      <a href="Dr-Fahad-Rahman-CV.pdf" download>CV (PDF)</a>
+      <a href="https://www.linkedin.com/in/fahad-rahman-924157167" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://scholar.google.com/citations?user=wD9jqwQAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="mailto:fahad@frenchresearcher.com">fahad@frenchresearcher.com</a>
+    </nav>
+    <div class="legal">
+      <span>&copy; <span id="yr"></span> Dr Fahad Rahman. All rights reserved. Text and illustrations on this site may not be reproduced without permission.</span>
+      <span><a href="privacy.html" style="color:inherit">Privacy</a> &middot; frenchresearcher.com</span>
+    </div>
   </div>
 </footer>
 
