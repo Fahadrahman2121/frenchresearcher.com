@@ -407,6 +407,19 @@
   }
   @media (max-width: 860px) { .hero canvas.net { opacity: .35; } }
 
+  /* Maps */
+  .maps { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 8px; }
+  .map { position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(255,255,255,.18); background: #0e2b57; min-height: 240px; }
+  .map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: saturate(.85); }
+  .map .ph { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; padding: 18px;
+    background: radial-gradient(circle at 50% 40%, rgba(201,162,39,.25), transparent 60%), repeating-linear-gradient(45deg, rgba(255,255,255,.04) 0 12px, transparent 12px 24px); }
+  .map .ph b { font-family: "Source Serif 4", Georgia, serif; font-size: 1.3rem; color: #fff; }
+  .map .ph span { color: #aab6c8; font-size: .82rem; max-width: 34ch; }
+  .map .ph button { background: var(--accent); color: var(--navy-deep); border: 0; border-radius: 8px; padding: 9px 16px; font-weight: 600; cursor: pointer; font-family: inherit; }
+  .map .pin { width: 34px; height: 34px; color: var(--accent); }
+  .map .label { position: absolute; left: 12px; top: 12px; z-index: 2; background: rgba(7,28,61,.85); color: #fff; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; pointer-events: none; }
+  @media (max-width: 860px) { .maps { grid-template-columns: 1fr; } }
+
   footer { padding: 34px 0 30px; font-size: .85rem; color: var(--muted); border-top: 1px solid var(--line); background: var(--bg-soft); }
   footer .wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: start; }
   footer .fbrand { font-family: "Source Serif 4", Georgia, serif; font-weight: 700; color: var(--navy); font-size: 1rem; margin-bottom: 6px; }
@@ -1132,6 +1145,16 @@
       <button class="btn btn-primary" type="submit">Send message</button>
       <p class="note">Your message goes straight to fahad@frenchresearcher.com. No mailing list, no sharing.</p>
     </form>
+    <div class="maps">
+      <div class="map" data-q="Lahore, Pakistan">
+        <span class="label">Lahore, Pakistan</span>
+        <div class="ph"><svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><b>Lahore, Pakistan</b><span>Map loads from Google Maps when you choose to show it.</span><button type="button">Show map</button></div>
+      </div>
+      <div class="map" data-q="Paris, France">
+        <span class="label">Paris, France</span>
+        <div class="ph"><svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><b>Paris, France</b><span>Map loads from Google Maps when you choose to show it.</span><button type="button">Show map</button></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1141,7 +1164,7 @@
     <div>
       <div class="fbrand">Dr Fahad Rahman</div>
       <p>Strategic IT, cybersecurity and blockchain consulting. Lahore and Paris, working remotely and on site worldwide.</p>
-      <p><strong>Privacy:</strong> this site sets no cookies and uses only a cookie-free page counter. If you use the contact form, what you type is relayed once to my mailbox and used only to reply to you. <a href="privacy.html">Full privacy note</a>.</p>
+      <p><strong>Privacy:</strong> this site sets no cookies and uses only a cookie-free page counter. If you use the contact form, what you type is relayed once to my mailbox and used only to reply to you. <a href="privacy.html">Full privacy note</a> &middot; <a href="terms.html">Terms of use</a>.</p>
     </div>
     <nav class="flinks" aria-label="Footer">
       <a href="#services">Services</a>
@@ -1156,7 +1179,7 @@
     </nav>
     <div class="legal">
       <span>&copy; <span id="yr"></span> Dr Fahad Rahman. All rights reserved. Text and illustrations on this site may not be reproduced without permission.</span>
-      <span><a href="privacy.html" style="color:inherit">Privacy</a> &middot; frenchresearcher.com</span>
+      <span><a href="privacy.html" style="color:inherit">Privacy</a> &middot; <a href="terms.html" style="color:inherit">Terms</a> &middot; frenchresearcher.com</span>
     </div>
   </div>
 </footer>
@@ -1241,6 +1264,16 @@
       if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { es.forEach(function (e) { var was = running; running = e.isIntersecting; if (running && (W === 0 || H === 0)) { size(); seed(); } if (running && !was) frame(); }); }).observe(cv.parentElement);
     }
   })();
+  // Click-to-load city maps
+  document.querySelectorAll('.map').forEach(function (m) {
+    var b = m.querySelector('button');
+    b.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://maps.google.com/maps?q=' + encodeURIComponent(m.dataset.q) + '&z=11&output=embed';
+      f.loading = 'lazy'; f.title = 'Map of ' + m.dataset.q; f.referrerPolicy = 'no-referrer-when-downgrade';
+      m.querySelector('.ph').remove(); m.appendChild(f);
+    });
+  });
   // Clamp long text to two lines with a Read more toggle.
   (function () {
     var SEL = ['#services .card p', '.work p', '.work .result', '.proj .card p', '.timeline p',
