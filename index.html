@@ -152,7 +152,7 @@
   .work h3 { margin: 6px 0 8px; font-size: 1.12rem; }
   .work .client { font-size: .88rem; color: var(--muted); margin-bottom: 12px; }
   .work p { color: var(--ink); font-size: .93rem; margin: 0 0 10px; }
-  .work .result { flex: 1; font-size: .93rem; color: var(--muted); margin: 0 0 14px; padding-left: 12px; border-left: 3px solid var(--accent); }
+  .work .result { flex: 0 0 auto; font-size: .93rem; color: var(--muted); margin: 0 0 14px; padding-left: 12px; border-left: 3px solid var(--accent); }
   .work .stack { display: flex; flex-wrap: wrap; gap: 6px; }
   .work .live { display: inline-flex; align-items: center; gap: 6px; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: #0a7a3b; background: #e8f7ee; border: 1px solid #bfe6cf; border-radius: 999px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
   .work .live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #16a34a; box-shadow: 0 0 0 3px rgba(22,163,74,.2); }
@@ -169,7 +169,7 @@
   .proj .art svg { display: block; width: 100%; height: auto; border-radius: var(--radius) var(--radius) 0 0; }
   .proj .status { display: inline-block; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; color: var(--navy); background: var(--bg-soft); border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; margin-bottom: 12px; align-self: flex-start; }
   .proj h3 { margin-bottom: 8px; }
-  .proj p { flex: 1; }
+  .proj p { flex: 0 0 auto; }
   .proj .venue { margin-top: 14px; font-size: .85rem; color: var(--muted); }
   .proj .venue a { color: var(--navy); }
   .offer { margin-top: 40px; background: var(--navy); color: #fff; border-radius: var(--radius); padding: 28px 30px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: center; }
@@ -193,7 +193,8 @@
   .post h3 { margin: 0 0 10px; font-size: 1.2rem; }
   .post h3 a { color: var(--navy); text-decoration: none; }
   .post h3 a:hover { text-decoration: underline; }
-  .post p { color: var(--muted); font-size: .95rem; margin: 0; flex: 1; }
+  .post p { color: var(--muted); font-size: .95rem; margin: 0; }
+  .post .more { margin-top: auto; padding-top: 16px; }
   .post .more { margin-top: 16px; font-weight: 600; color: var(--navy); text-decoration: none; font-size: .92rem; }
   .post .more:hover { text-decoration: underline; }
 
@@ -233,6 +234,16 @@
   .contact .details { margin-top: 26px; }
   .contact .wrap { align-items: start; }
   @media (max-width: 860px) { .form .row { grid-template-columns: 1fr; } }
+
+  /* Read more clamping */
+  .clamp { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .clamp.open { display: block; -webkit-line-clamp: unset; overflow: visible; }
+  .more-btn { display: inline-block; background: none; border: 0; padding: 0; margin: 6px 0 0; color: var(--navy); font-weight: 600; font-size: .86rem; cursor: pointer; font-family: inherit; line-height: 1.4; }
+  .more-btn:hover { text-decoration: underline; }
+  .more-btn::after { content: " \25BE"; font-size: .8em; }
+  .more-btn.open::after { content: " \25B4"; }
+  .contact .more-btn, .offer .more-btn { color: var(--accent); }
+  .quote .more-btn { margin-top: 0; margin-bottom: 14px; }
 
   footer { padding: 34px 0 30px; font-size: .85rem; color: var(--muted); border-top: 1px solid var(--line); background: var(--bg-soft); }
   footer .wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: start; }
@@ -843,6 +854,48 @@
 </footer>
 
 <script>
+  // Clamp long text to two lines with a Read more toggle.
+  (function () {
+    var SEL = ['#services .card p', '.work p', '.work .result', '.proj .card p', '.timeline p',
+               '.post p', '.quote blockquote', '.offer p', '.about > div > p', '.contact p',
+               '.tier .for', '.intro'].join(',');
+    function lineHeight(el) {
+      var lh = parseFloat(getComputedStyle(el).lineHeight);
+      return isNaN(lh) ? parseFloat(getComputedStyle(el).fontSize) * 1.6 : lh;
+    }
+    function apply() {
+      document.querySelectorAll(SEL).forEach(function (el) {
+        if (el.dataset.clampDone) return;
+        el.classList.remove('clamp', 'open');
+        var full = el.scrollHeight;
+        if (full > lineHeight(el) * 2 + 4) {
+          el.classList.add('clamp');
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'more-btn';
+          btn.textContent = 'Read more';
+          btn.setAttribute('aria-expanded', 'false');
+          btn.addEventListener('click', function () {
+            var open = el.classList.toggle('open');
+            btn.classList.toggle('open', open);
+            btn.textContent = open ? 'Show less' : 'Read more';
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          });
+          el.insertAdjacentElement('afterend', btn);
+        }
+        el.dataset.clampDone = '1';
+      });
+    }
+    function reset() {
+      document.querySelectorAll('.more-btn').forEach(function (b) { b.remove(); });
+      document.querySelectorAll(SEL).forEach(function (el) { delete el.dataset.clampDone; el.classList.remove('clamp', 'open'); });
+      apply();
+    }
+    var t;
+    window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(reset, 200); });
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(apply); } else { apply(); }
+    window.addEventListener('load', function () { setTimeout(reset, 100); });
+  })();
   document.getElementById('yr').textContent = new Date().getFullYear();
   document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', () => document.getElementById('menu').classList.remove('open')));
 </script>
