@@ -89,6 +89,19 @@
   .hero-card li:last-child { border-bottom: 0; }
   .hero-card li b { color: var(--accent); font-weight: 700; min-width: 3.2rem; font-family: "Source Serif 4", Georgia, serif; font-size: 1.25rem; line-height: 1.2; }
 
+  /* Three strands */
+  .strands { background: #fff; padding: 56px 0 8px; }
+  .strands .lead { font-family: "Source Serif 4", Georgia, serif; font-size: clamp(1.3rem, 2.4vw, 1.7rem); color: var(--navy); max-width: 30ch; line-height: 1.3; margin: 0 0 28px; }
+  .strands .lead em { color: var(--accent); font-style: normal; }
+  .strand-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .strand { position: relative; padding: 26px 26px 22px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg-soft); }
+  .strand .n { position: absolute; top: 18px; right: 22px; font-family: "Source Serif 4", Georgia, serif; font-size: 2.4rem; color: rgba(11,42,91,.12); font-weight: 700; line-height: 1; }
+  .strand h3 { margin: 0 0 8px; font-size: 1.25rem; }
+  .strand p { margin: 0 0 12px; color: var(--muted); font-size: .95rem; }
+  .strand a { color: var(--navy); font-weight: 600; text-decoration: none; font-size: .9rem; }
+  .strand a:hover { text-decoration: underline; }
+  @media (max-width: 860px) { .strand-grid { grid-template-columns: 1fr; } }
+
   /* Sections */
   section { padding: 72px 0; }
   section.soft { background: var(--bg-soft); }
@@ -296,6 +309,8 @@
   @keyframes drift2 { from { transform: translate(0,0) } to { transform: translate(-70px,-50px) } }
   .hero canvas.net { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: .55; }
   .hero .wrap { position: relative; z-index: 1; }
+  .hero .tagline { font-family: "Source Serif 4", Georgia, serif; font-size: clamp(1.15rem, 2vw, 1.5rem); color: #f1d27a; margin: 0 0 .9em; line-height: 1.35; }
+  .hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); letter-spacing: -.01em; margin-bottom: .25em; }
   .hero .eyebrow .rot { display: inline-block; min-width: 9ch; color: #fff; border-bottom: 2px solid var(--accent); transition: opacity .35s, transform .35s; }
   .hero .eyebrow .rot.out { opacity: 0; transform: translateY(6px); }
   .hero h1 .grad { background: linear-gradient(90deg, #fff 0%, #f1d27a 50%, #fff 100%); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent; animation: shine 6s linear infinite; }
@@ -387,7 +402,7 @@
       <ul id="menu">
         <li><a href="#services">Services</a></li>
         <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#about">Biography</a></li>
         <li><a href="#work">Track record</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#blockchain">Blockchain</a></li>
@@ -404,9 +419,10 @@
   <canvas class="net" aria-hidden="true"></canvas>
   <div class="wrap">
     <div>
-      <span class="eyebrow">Strategic IT &middot; Cybersecurity &middot; Blockchain &middot; AI &amp; RAG &middot; Python &middot; <span class="rot" id="rot">Leadership</span></span>
-      <h1>Technology leadership for organisations that <span class="grad">cannot afford to get it wrong.</span></h1>
-      <p class="lede">Independent IT consultant and Python developer. Twenty years in enterprise technology, ten at executive level, across government, education, telecom and multinationals. I help leadership teams set strategy, secure what they run, and build the systems the business depends on, often in Python myself.</p>
+      <span class="eyebrow">Technology executive &middot; Researcher &middot; <span class="rot" id="rot">Consultant</span></span>
+      <h1>Dr Fahad <span class="grad">Rahman</span></h1>
+      <p class="tagline">Technology leadership for organisations that cannot afford to get it wrong.</p>
+      <p class="lede">I lead IT for public institutions, research blockchain and post-quantum security at Universit&eacute; Paris Cit&eacute;, and build systems in Python for organisations that hire me. Twenty years in, I still write the code.</p>
       <div class="btns">
         <a class="btn btn-primary" href="#contact">Start a conversation</a>
         <a class="btn btn-ghost" href="#services">What I do</a>
@@ -424,6 +440,32 @@
         <li><b>PMP</b> ITIL &middot; CCNA &middot; CCNA Security &middot; CCSP</li>
       </ul>
     </aside>
+    </div>
+  </div>
+</section>
+
+<section class="strands" id="strands">
+  <div class="wrap">
+    <p class="lead rv">I work across three intertwined strands, and each one makes the other two better.</p>
+    <div class="strand-grid rv-stagger">
+      <div class="strand">
+        <span class="n">01</span>
+        <h3>Public service</h3>
+        <p>Head of IT for a provincial regulator today, and before that a national railway, one of Pakistan’s largest school networks and the city’s transport and parking authorities. Systems that citizens depend on, run properly.</p>
+        <a href="#work">Track record &rarr;</a>
+      </div>
+      <div class="strand">
+        <span class="n">02</span>
+        <h3>Research</h3>
+        <p>Doctorate and ongoing research at Universit&eacute; Paris Cit&eacute;’s LIPADE laboratory on making blockchains scale and survive the quantum era. Published with IEEE and Springer, and a reviewer for top-ranked journals.</p>
+        <a href="#blockchain">Blockchain research &rarr;</a>
+      </div>
+      <div class="strand">
+        <span class="n">03</span>
+        <h3>Practice</h3>
+        <p>Independent consulting, Python development and AI systems for organisations that hire me: security audits, hosting design, RAG assistants, and live products I build and run myself. Plus teaching the next generation to do the same.</p>
+        <a href="#services">Services &rarr;</a>
+      </div>
     </div>
   </div>
 </section>
@@ -533,14 +575,25 @@
 
 <section class="about" id="about">
   <div class="wrap">
-    <div>
-      <span class="eyebrow">About</span>
-      <h2 class="rv">Executive experience, research depth</h2>
-      <p>I have led IT for a provincial regulator, a national railway and one of the largest school networks in Pakistan, worked as a security engineer in France, and taught digital forensics at Lahore Garrison University. I have sat on both sides of the table: the executive who owns the outcome and the engineer who makes it work.</p>
-      <p>My doctorate at Universit&eacute; Paris Cit&eacute; is in blockchain systems, I remain an associate researcher at its LIPADE laboratory, and I still publish with IEEE and Springer and review for international journals. I also write production code: the portals, automation, research simulators and retrieval-augmented AI assistants described on this site are my own Python, and I supervise student teams building RAG applications of their own. Clients get advice grounded in current research and in working software, not slideware.</p>
-          </div>
-    <div class="facts">
-      <h3>Qualifications</h3>
+    <div class="rv">
+      <span class="eyebrow">Biography</span>
+      <h2>In my own words</h2>
+      <p>I started in networks. My first jobs were building and running enterprise network infrastructure for a systems integrator and then in the IP core of Wateen Telecom, one of Pakistan’s first fibre operators. That is where I learned that the systems people rely on are only as good as the discipline behind them.</p>
+      <p>From 2010 I moved into public service, leading IT for the Lahore Transport Company and then the Lahore Parking Company, where I automated parking with number-plate recognition and built a geofenced subsidy system for public transport. In 2015 I became Director IT at Pakistan Railways, and later returned for a second term to lead its SAP S/4HANA transformation and e-ticketing.</p>
+      <p>In between, I went to France. I completed a PhD in Computer Science at Universit&eacute; Paris Cit&eacute; on scaling blockchain systems, and worked as a security engineer for Alfabet-group and Zyneas Technology, running vulnerability management and building CVE tooling for commercial security operations. I remain an associate researcher at the university’s LIPADE laboratory, and I review for international journals.</p>
+      <p>Back in Pakistan I led IT for Education Services Limited, The City School Network, where we launched the organisation’s first online bookstore and a customer-care platform, and taught digital forensics at Lahore Garrison University. Since August 2026 I am General Manager IT at the Punjab Agriculture, Food and Drug Authority.</p>
+      <p>Alongside all of it I consult, I write Python, and I build things: a staff portal, a continuous security audit, a live CRM for a solar company, research simulators, and retrieval-augmented AI assistants. I also supervise student teams building their first RAG applications. I work in English and Urdu, and get by in French.</p>
+    </div>
+    <div class="facts rv">
+      <h3>Roles and affiliations</h3>
+      <dl>
+        <dt>2026 &ndash;</dt><dd>General Manager IT, Punjab Agriculture, Food and Drug Authority</dd>
+        <dt>2020 &ndash;</dt><dd>Associate Researcher, LIPADE, Universit&eacute; Paris Cit&eacute;</dd>
+        <dt>Ongoing</dt><dd>Peer reviewer, top-ranked international journals</dd>
+        <dt>2025 &ndash; 26</dt><dd>Adjunct Faculty, Lahore Garrison University</dd>
+        <dt>2026</dt><dd>Supervisor, Islamia College RAG internship programme</dd>
+      </dl>
+      <h3 style="margin-top:22px">Qualifications</h3>
       <dl>
         <dt>2020&ndash;2023</dt><dd>PhD Computer Science (Blockchain), Universit&eacute; Paris Cit&eacute;, France</dd>
         <dt>2013&ndash;2015</dt><dd>M.Phil. Computer Science, GC University Lahore</dd>
@@ -548,11 +601,9 @@
         <dt>2003&ndash;2005</dt><dd>M.Sc. Computer Science, GC University Lahore</dd>
         <dt>1999&ndash;2002</dt><dd>BS (Hons) Computer Science, GC University Lahore</dd>
       </dl>
-      <h3 style="margin-top:22px">Certifications &amp; platforms</h3>
+      <h3 style="margin-top:22px">Certifications</h3>
       <div class="tags">
-        <span class="tag">PMP</span><span class="tag">ITIL</span><span class="tag">CCNA</span><span class="tag">CCNA Security</span><span class="tag">CCSP</span>
-        <span class="tag">ISO 27001</span><span class="tag">SAP S/4HANA</span><span class="tag">Oracle EBS</span><span class="tag">Dynamics 365</span>
-        <span class="tag">Cisco ASA</span><span class="tag">Fortinet</span><span class="tag">Palo Alto</span><span class="tag">Darktrace</span>
+        <span class="tag">PMP</span><span class="tag">ITIL</span><span class="tag">CCNA</span><span class="tag">CCNA Security</span><span class="tag">CCSP</span><span class="tag">ISO 27001</span>
       </div>
       <p style="margin:22px 0 0"><a class="btn btn-primary" href="Dr-Fahad-Rahman-CV.pdf" download>Download full CV (PDF)</a></p>
     </div>
@@ -1114,7 +1165,7 @@
     }
 
     // rotating word in the hero eyebrow
-    var rot = document.getElementById('rot'), words = ['Leadership', 'Security', 'Architecture', 'Research', 'Delivery'], wi = 0;
+    var rot = document.getElementById('rot'), words = ['Consultant', 'Python developer', 'Educator', 'Blockchain researcher', 'CISO for hire'], wi = 0;
     if (rot && !reduce) setInterval(function () { rot.classList.add('out'); setTimeout(function () { wi = (wi + 1) % words.length; rot.textContent = words[wi]; rot.classList.remove('out'); }, 350); }, 2600);
 
     // cursor-following glow on service cards
@@ -1150,7 +1201,7 @@
   // Clamp long text to two lines with a Read more toggle.
   (function () {
     var SEL = ['#services .card p', '.work p', '.work .result', '.proj .card p', '.timeline p',
-               '.post p', '.quote blockquote', '.offer p', '.about > div > p', '.contact p',
+               '.post p', '.quote blockquote', '.offer p', '.contact p',
                '.tier .for', '.intro'].join(',');
     function lineHeight(el) {
       var lh = parseFloat(getComputedStyle(el).lineHeight);
