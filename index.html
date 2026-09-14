@@ -272,6 +272,86 @@
   .contact .more-btn, .offer .more-btn { color: var(--accent); }
   .quote .more-btn { margin-top: 0; margin-bottom: 14px; }
 
+  /* ===== WOW layer ===== */
+  #progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: linear-gradient(90deg, var(--accent), #f1d27a); z-index: 50; transition: width .1s linear; }
+  header.nav { transition: box-shadow .3s, background .3s; }
+  header.nav.scrolled { box-shadow: 0 6px 24px rgba(11,42,91,.08); background: rgba(255,255,255,.9); }
+  header.nav.scrolled .wrap { height: 56px; }
+  header.nav .wrap { transition: height .3s; }
+  nav a:not(.cta) { position: relative; padding-bottom: 4px; }
+  nav a:not(.cta)::after { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--accent); transition: width .25s ease; }
+  nav a:not(.cta):hover::after, nav a.active::after { width: 100%; }
+  nav a.active { color: var(--navy); }
+  .btn { position: relative; overflow: hidden; transition: transform .2s ease, box-shadow .2s ease; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,.18); }
+  .btn::before { content: ""; position: absolute; top: 0; left: -75%; width: 50%; height: 100%; background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.45) 50%, rgba(255,255,255,0) 100%); transform: skewX(-20deg); transition: left .6s ease; }
+  .btn:hover::before { left: 125%; }
+
+  /* hero */
+  .hero { position: relative; overflow: hidden; }
+  .hero::before, .hero::after { content: ""; position: absolute; border-radius: 50%; filter: blur(90px); opacity: .55; pointer-events: none; }
+  .hero::before { width: 520px; height: 520px; left: -160px; top: -180px; background: radial-gradient(circle, #2b5fb0 0%, rgba(43,95,176,0) 70%); animation: drift1 18s ease-in-out infinite alternate; }
+  .hero::after { width: 460px; height: 460px; right: -140px; bottom: -200px; background: radial-gradient(circle, rgba(201,162,39,.75) 0%, rgba(201,162,39,0) 70%); animation: drift2 22s ease-in-out infinite alternate; }
+  @keyframes drift1 { from { transform: translate(0,0) } to { transform: translate(80px,60px) } }
+  @keyframes drift2 { from { transform: translate(0,0) } to { transform: translate(-70px,-50px) } }
+  .hero canvas.net { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: .55; }
+  .hero .wrap { position: relative; z-index: 1; }
+  .hero .eyebrow .rot { display: inline-block; min-width: 9ch; color: #fff; border-bottom: 2px solid var(--accent); transition: opacity .35s, transform .35s; }
+  .hero .eyebrow .rot.out { opacity: 0; transform: translateY(6px); }
+  .hero h1 .grad { background: linear-gradient(90deg, #fff 0%, #f1d27a 50%, #fff 100%); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent; animation: shine 6s linear infinite; }
+  @keyframes shine { to { background-position: 200% center } }
+  .hero-side { position: relative; }
+  .portrait-wrap { position: relative; width: 200px; height: 200px; border-radius: 50%; }
+  .portrait-wrap::before { content: ""; position: absolute; inset: -6px; border-radius: 50%; background: conic-gradient(from 0deg, var(--accent), #f1d27a, #0b2a5b, var(--accent)); animation: spin 8s linear infinite; }
+  .portrait-wrap::after { content: ""; position: absolute; inset: -18px; border-radius: 50%; background: radial-gradient(circle, rgba(201,162,39,.35) 0%, rgba(201,162,39,0) 70%); animation: pulse 3s ease-in-out infinite; }
+  .portrait-wrap .portrait { position: relative; z-index: 1; border-width: 3px; border-color: var(--navy-deep); }
+  @keyframes spin { to { transform: rotate(360deg) } }
+  @keyframes pulse { 0%,100% { transform: scale(1); opacity: .7 } 50% { transform: scale(1.12); opacity: 1 } }
+  .hero-card { backdrop-filter: blur(6px); }
+  .hero-card li b { transition: color .3s; }
+
+  /* reveal on scroll */
+  .rv { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .rv.in { opacity: 1; transform: none; }
+  .rv-stagger > * { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+  .rv-stagger.in > * { opacity: 1; transform: none; }
+  .rv-stagger.in > *:nth-child(1) { transition-delay: .05s } .rv-stagger.in > *:nth-child(2) { transition-delay: .12s } .rv-stagger.in > *:nth-child(3) { transition-delay: .19s } .rv-stagger.in > *:nth-child(4) { transition-delay: .26s } .rv-stagger.in > *:nth-child(5) { transition-delay: .33s } .rv-stagger.in > *:nth-child(6) { transition-delay: .40s } .rv-stagger.in > *:nth-child(7) { transition-delay: .47s } .rv-stagger.in > *:nth-child(8) { transition-delay: .54s }
+
+  /* cards */
+  .card, .work, .proj .card, .tier, .skill, .post, .quote, .sproj, .eitem { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .card:hover, .work:hover, .tier:hover, .skill:hover, .post:hover, .quote:hover, .sproj:hover, .eitem:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(11,42,91,.12); border-color: rgba(201,162,39,.6); }
+  .card { position: relative; overflow: hidden; }
+  .card::after { content: ""; position: absolute; inset: 0; background: radial-gradient(400px circle at var(--mx, 50%) var(--my, 50%), rgba(201,162,39,.12), transparent 40%); opacity: 0; transition: opacity .3s; pointer-events: none; }
+  .card:hover::after { opacity: 1; }
+  .card .num { transition: transform .3s; }
+  .card:hover .num { transform: scale(1.15); }
+  .proj .art svg { transition: transform .5s ease; }
+  .proj .card:hover .art svg { transform: scale(1.04); }
+  .eyebrow { position: relative; padding-left: 34px; }
+  .eyebrow::before { content: ""; position: absolute; left: 0; top: 50%; width: 24px; height: 2px; background: var(--accent); }
+  .hero-card .eyebrow, .students .eyebrow, .earlier .eyebrow { padding-left: 34px; }
+  .timeline li::before { transition: transform .3s, box-shadow .3s; }
+  .timeline li:hover::before { transform: scale(1.4); box-shadow: 0 0 0 6px rgba(201,162,39,.2); }
+  .offer { background: linear-gradient(135deg, var(--navy) 0%, #14407f 100%); position: relative; overflow: hidden; }
+  .offer::before { content: ""; position: absolute; right: -80px; top: -80px; width: 260px; height: 260px; border-radius: 50%; background: radial-gradient(circle, rgba(201,162,39,.35), transparent 70%); }
+  .contact { position: relative; overflow: hidden; }
+  .contact::before { content: ""; position: absolute; left: -120px; bottom: -160px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(43,95,176,.5), transparent 70%); filter: blur(40px); }
+  .contact .wrap { position: relative; z-index: 1; }
+  .form input:focus, .form textarea:focus { box-shadow: 0 0 0 4px rgba(201,162,39,.25); }
+
+  /* back to top */
+  #totop { position: fixed; right: 22px; bottom: 22px; width: 46px; height: 46px; border-radius: 50%; background: var(--navy); color: #fff; border: 2px solid var(--accent); display: grid; place-items: center; cursor: pointer; opacity: 0; transform: translateY(12px); transition: opacity .3s, transform .3s; z-index: 40; box-shadow: 0 8px 20px rgba(0,0,0,.25); }
+  #totop.show { opacity: 1; transform: none; }
+  #totop:hover { background: var(--navy-deep); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rv, .rv-stagger > * { opacity: 1; transform: none; transition: none; }
+    .hero::before, .hero::after, .portrait-wrap::before, .portrait-wrap::after, .hero h1 .grad { animation: none; }
+    .hero canvas.net { display: none; }
+    .card, .work, .tier, .skill, .post, .quote, .sproj, .eitem, .btn { transition: none; }
+  }
+  @media (max-width: 860px) { .hero canvas.net { opacity: .35; } }
+
   footer { padding: 34px 0 30px; font-size: .85rem; color: var(--muted); border-top: 1px solid var(--line); background: var(--bg-soft); }
   footer .wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: start; }
   footer .fbrand { font-family: "Source Serif 4", Georgia, serif; font-weight: 700; color: var(--navy); font-size: 1rem; margin-bottom: 6px; }
@@ -298,6 +378,7 @@
 </head>
 <body>
 
+<div id="progress"></div>
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#top">Dr Fahad Rahman<span>.</span></a>
@@ -320,10 +401,11 @@
 </header>
 
 <section class="hero" id="top">
+  <canvas class="net" aria-hidden="true"></canvas>
   <div class="wrap">
     <div>
-      <span class="eyebrow">Strategic IT &middot; Cybersecurity &middot; Blockchain &middot; AI &amp; RAG &middot; Python</span>
-      <h1>Technology leadership for organisations that cannot afford to get it wrong.</h1>
+      <span class="eyebrow">Strategic IT &middot; Cybersecurity &middot; Blockchain &middot; AI &amp; RAG &middot; Python &middot; <span class="rot" id="rot">Leadership</span></span>
+      <h1>Technology leadership for organisations that <span class="grad">cannot afford to get it wrong.</span></h1>
       <p class="lede">Independent IT consultant and Python developer. Twenty years in enterprise technology, ten at executive level, across government, education, telecom and multinationals. I help leadership teams set strategy, secure what they run, and build the systems the business depends on, often in Python myself.</p>
       <div class="btns">
         <a class="btn btn-primary" href="#contact">Start a conversation</a>
@@ -332,11 +414,11 @@
       </div>
     </div>
     <div class="hero-side">
-    <img class="portrait" src="photo.jpg" alt="Dr Fahad Rahman" width="200" height="200">
+    <div class="portrait-wrap"><img class="portrait" src="photo.jpg" alt="Dr Fahad Rahman" width="200" height="200"></div>
     <aside class="hero-card" aria-label="At a glance">
       <ul>
-        <li><b>20+</b> years of enterprise IT leadership</li>
-        <li><b>10+</b> years in C-level and executive roles</li>
+        <li><b data-count="20" data-suffix="+">0+</b> years of enterprise IT leadership</li>
+        <li><b data-count="10" data-suffix="+">0+</b> years in C-level and executive roles</li>
         <li><b>PhD</b> Computer Science (Blockchain), Universit&eacute; Paris Cit&eacute;</li>
         <li><b>AI</b> RAG and LLM applications, built, deployed and taught</li>
         <li><b>PMP</b> ITIL &middot; CCNA &middot; CCNA Security &middot; CCSP</li>
@@ -349,9 +431,9 @@
 <section id="services">
   <div class="wrap">
     <span class="eyebrow">Services</span>
-    <h2>What I do for clients</h2>
-    <p class="intro">Scoped to a clear outcome, delivered hands-on. Advisory retainers, fixed-scope projects or interim leadership, remote or on site.</p>
-    <div class="grid">
+    <h2 class="rv">What I do for clients</h2>
+    <p class="intro rv">Scoped to a clear outcome, delivered hands-on. Advisory retainers, fixed-scope projects or interim leadership, remote or on site.</p>
+    <div class="grid rv-stagger">
       <div class="card">
         <div class="num">01</div>
         <h3>Technology strategy &amp; digital transformation</h3>
@@ -399,9 +481,9 @@
 <section class="soft" id="pricing">
   <div class="wrap">
     <span class="eyebrow">Pricing</span>
-    <h2>Three ways to work together</h2>
-    <p class="intro">Clear scope, a price agreed up front, no surprises. Every engagement starts with a free 30-minute call to see whether I am the right person for the problem.</p>
-    <div class="tiers">
+    <h2 class="rv">Three ways to work together</h2>
+    <p class="intro rv">Clear scope, a price agreed up front, no surprises. Every engagement starts with a free 30-minute call to see whether I am the right person for the problem.</p>
+    <div class="tiers rv-stagger">
       <div class="tier">
         <div class="name">Advisory day</div>
         <div class="for">For a decision that needs an expert in the room</div>
@@ -453,7 +535,7 @@
   <div class="wrap">
     <div>
       <span class="eyebrow">About</span>
-      <h2>Executive experience, research depth</h2>
+      <h2 class="rv">Executive experience, research depth</h2>
       <p>I have led IT for a provincial regulator, a national railway and one of the largest school networks in Pakistan, worked as a security engineer in France, and taught digital forensics at Lahore Garrison University. I have sat on both sides of the table: the executive who owns the outcome and the engineer who makes it work.</p>
       <p>My doctorate at Universit&eacute; Paris Cit&eacute; is in blockchain systems, I remain an associate researcher at its LIPADE laboratory, and I still publish with IEEE and Springer and review for international journals. I also write production code: the portals, automation, research simulators and retrieval-augmented AI assistants described on this site are my own Python, and I supervise student teams building RAG applications of their own. Clients get advice grounded in current research and in working software, not slideware.</p>
           </div>
@@ -480,9 +562,9 @@
 <section class="soft" id="skills">
   <div class="wrap">
     <span class="eyebrow">Skills</span>
-    <h2>What I bring to the table</h2>
-    <p class="intro">Twenty years across the stack, from board papers to firewall rules. Highlighted items are where I am used most often.</p>
-    <div class="skills">
+    <h2 class="rv">What I bring to the table</h2>
+    <p class="intro rv">Twenty years across the stack, from board papers to firewall rules. Highlighted items are where I am used most often.</p>
+    <div class="skills rv-stagger">
       <div class="skill">
         <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20V9l7-5 7 5v11"/><path d="M9 20v-6h6v6"/></svg>Leadership &amp; strategy</h3>
         <div class="tags"><span class="tag lead">Technology strategy</span><span class="tag lead">Digital transformation</span><span class="tag">Enterprise architecture</span><span class="tag">Cloud strategy</span><span class="tag">Board-level advisory</span><span class="tag">Programme leadership</span><span class="tag">Vendor &amp; stakeholder management</span><span class="tag">IT governance</span></div>
@@ -520,8 +602,8 @@
 <section id="work">
   <div class="wrap">
     <span class="eyebrow">Track record</span>
-    <h2>Selected engagements</h2>
-    <ul class="timeline">
+    <h2 class="rv">Selected engagements</h2>
+    <ul class="timeline rv">
       <li>
         <div class="when">2026 &ndash; present &middot; Government regulator</div>
         <h3>General Manager IT, Punjab Agriculture, Food and Drug Authority</h3>
@@ -569,9 +651,9 @@
 <section class="soft" id="projects">
   <div class="wrap">
     <span class="eyebrow">Projects</span>
-    <h2>Selected projects</h2>
-    <p class="intro">Systems I have designed, built or led to production, including products I run today. Client names appear where the work is already public; the rest are described by sector.</p>
-    <div class="folio">
+    <h2 class="rv">Selected projects</h2>
+    <p class="intro rv">Systems I have designed, built or led to production, including products I run today. Client names appear where the work is already public; the rest are described by sector.</p>
+    <div class="folio rv-stagger">
       <div class="work">
         <div class="cat">Live product <span class="live">Live</span></div>
         <h3>Solar service CRM and quotation platform</h3>
@@ -641,8 +723,8 @@
     <div class="earlier">
       <span class="eyebrow">Programmes led</span>
       <h3 class="sub">Earlier programmes and platforms</h3>
-      <p class="intro">Larger implementations I established or led in executive roles before 2024.</p>
-      <div class="egrid">
+      <p class="intro rv">Larger implementations I established or led in executive roles before 2024.</p>
+      <div class="egrid rv-stagger">
         <div class="eitem">
           <h4>First 3D printing lab in the public sector</h4>
           <div class="org">Public sector, Pakistan</div>
@@ -688,8 +770,8 @@
     <div class="students">
       <span class="eyebrow">Teaching</span>
       <h3 class="sub">Supervised student projects</h3>
-      <p class="intro">Summer 2026 internship programme with Islamia College, Lahore: four student teams each built a working retrieval-augmented generation chatbot in Python under my supervision, from vector store to user interface. The repositories are the students’ own work, published under their own GitHub accounts.</p>
-      <div class="sgrid">
+      <p class="intro rv">Summer 2026 internship programme with Islamia College, Lahore: four student teams each built a working retrieval-augmented generation chatbot in Python under my supervision, from vector store to user interface. The repositories are the students’ own work, published under their own GitHub accounts.</p>
+      <div class="sgrid rv-stagger">
         <div class="sproj">
           <span class="tag">RAG &middot; Education</span>
           <h4>EduNova AI Pro</h4>
@@ -722,9 +804,9 @@
 <section id="blockchain">
   <div class="wrap">
     <span class="eyebrow">Blockchain</span>
-    <h2>Blockchain research and projects</h2>
-    <p class="intro">Making blockchain systems scale without giving up trust: sharding, cross-chain control, oracle trust and, most recently, quantum threats to the mempool. Every project has a peer-reviewed paper behind it.</p>
-    <div class="proj">
+    <h2 class="rv">Blockchain research and projects</h2>
+    <p class="intro rv">Making blockchain systems scale without giving up trust: sharding, cross-chain control, oracle trust and, most recently, quantum threats to the mempool. Every project has a peer-reviewed paper behind it.</p>
+    <div class="proj rv-stagger">
       <div class="card">
         <div class="art"><svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#0b2a5b"/><stop offset="1" stop-color="#071c3d"/></linearGradient></defs>
@@ -824,7 +906,7 @@
         <div class="venue">Universit&eacute; Paris Cit&eacute;, Paris</div>
       </div>
     </div>
-    <div class="offer">
+    <div class="offer rv">
       <div>
         <h3>Blockchain advisory for organisations</h3>
         <p>Most blockchain proposals fail on architecture, not cryptography. I help organisations decide whether a ledger is the right tool, and design one that lasts.</p>
@@ -843,9 +925,9 @@
 <section class="soft" id="research">
   <div class="wrap">
     <span class="eyebrow">Research</span>
-    <h2>Selected publications</h2>
-    <p class="intro">Blockchain scalability, decentralised trust and secure distributed systems, with IEEE and Springer. I also serve as a peer reviewer for top-ranked international journals; reviewer certificates are on my LinkedIn profile. Full list on <a href="https://scholar.google.com/citations?user=wD9jqwQAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.</p>
-    <ul class="pubs">
+    <h2 class="rv">Selected publications</h2>
+    <p class="intro rv">Blockchain scalability, decentralised trust and secure distributed systems, with IEEE and Springer. I also serve as a peer reviewer for top-ranked international journals; reviewer certificates are on my LinkedIn profile. Full list on <a href="https://scholar.google.com/citations?user=wD9jqwQAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.</p>
+    <ul class="pubs rv-stagger">
       <li>
         <div class="title">Secure and Scalable Blockchain-Enabled 5G Vehicular Networks Using Federated Trust-Aware Sharding and Cross-Shard Authentication</div>
         <div class="venue">Cluster Computing (Springer), accepted 2026 &middot; <a href="https://doi.org/10.1007/s10586-026-06593-w" target="_blank" rel="noopener">doi:10.1007/s10586-026-06593-w</a></div>
@@ -877,9 +959,9 @@
 <section id="blog">
   <div class="wrap">
     <span class="eyebrow">Blog</span>
-    <h2>Notes from the work</h2>
-    <p class="intro">Short pieces on IT leadership, security auditing and blockchain research. <a href="blog/">All posts</a>.</p>
-    <div class="posts">
+    <h2 class="rv">Notes from the work</h2>
+    <p class="intro rv">Short pieces on IT leadership, security auditing and blockchain research. <a href="blog/">All posts</a>.</p>
+    <div class="posts rv-stagger">
       <div class="post">
         <div class="date">13 September 2026</div>
         <h3><a href="blog/quantum-on-spend-window.html">The quantum risk to a blockchain is measured in seconds, not decades</a></h3>
@@ -899,8 +981,8 @@
 <section class="soft" id="testimonials">
   <div class="wrap">
     <span class="eyebrow">Testimonials</span>
-    <h2>What people say</h2>
-    <div class="quotes">
+    <h2 class="rv">What people say</h2>
+    <div class="quotes rv-stagger">
       <div class="quote">
         <blockquote>An accomplished academician, researcher, and technology professional with exceptional teaching, research, leadership, and communication skills. His dedication and commitment significantly contributed to the University's academic, research, and professional development objectives.</blockquote>
         <div class="who"><b>Kaukab J. Zuberi</b><span>Associate Dean Social Sciences, Lahore Garrison University</span></div>
@@ -914,7 +996,7 @@
   <div class="wrap">
     <div>
       <span class="eyebrow">Contact</span>
-      <h2>Let's talk about your next project</h2>
+      <h2 class="rv">Let's talk about your next project</h2>
       <p>Tell me what you are trying to achieve and where it is stuck. I reply personally, usually within one working day. Remote or on site, worldwide.</p>
       <ul class="contact-list details">
         <li><span class="k">Email</span><a href="mailto:fahad@frenchresearcher.com">fahad@frenchresearcher.com</a></li>
@@ -959,6 +1041,7 @@
   </div>
 </section>
 
+<button id="totop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 <footer>
   <div class="wrap">
     <div>
@@ -985,6 +1068,85 @@
 </footer>
 
 <script>
+  // ===== WOW layer =====
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // progress bar + header + back to top
+    var prog = document.getElementById('progress'), hdr = document.querySelector('header.nav'), top = document.getElementById('totop');
+    function onScroll() {
+      var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+      prog.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+      hdr.classList.toggle('scrolled', h.scrollTop > 40);
+      top.classList.toggle('show', h.scrollTop > 600);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    top.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });
+
+    // active nav link
+    var links = [].slice.call(document.querySelectorAll('#menu a[href^="#"]'));
+    var secs = links.map(function (a) { return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id); }); } });
+      }, { rootMargin: '-40% 0px -55% 0px' });
+      secs.forEach(function (x) { io.observe(x); });
+
+      // reveal
+      var ro = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.rv, .rv-stagger').forEach(function (el) { ro.observe(el); });
+
+      // count-up
+      var co = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (!e.isIntersecting) return; co.unobserve(e.target);
+          var el = e.target, target = +el.dataset.count, suf = el.dataset.suffix || '', t0 = null;
+          if (reduce) { el.textContent = target + suf; return; }
+          function step(ts) { if (!t0) t0 = ts; var k = Math.min((ts - t0) / 1400, 1); k = 1 - Math.pow(1 - k, 3); el.textContent = Math.round(target * k) + suf; if (k < 1) requestAnimationFrame(step); }
+          requestAnimationFrame(step);
+        });
+      }, { threshold: 0.5 });
+      document.querySelectorAll('[data-count]').forEach(function (el) { co.observe(el); });
+    } else {
+      document.querySelectorAll('.rv, .rv-stagger').forEach(function (el) { el.classList.add('in'); });
+      document.querySelectorAll('[data-count]').forEach(function (el) { el.textContent = el.dataset.count + (el.dataset.suffix || ''); });
+    }
+
+    // rotating word in the hero eyebrow
+    var rot = document.getElementById('rot'), words = ['Leadership', 'Security', 'Architecture', 'Research', 'Delivery'], wi = 0;
+    if (rot && !reduce) setInterval(function () { rot.classList.add('out'); setTimeout(function () { wi = (wi + 1) % words.length; rot.textContent = words[wi]; rot.classList.remove('out'); }, 350); }, 2600);
+
+    // cursor-following glow on service cards
+    document.querySelectorAll('#services .card').forEach(function (c) {
+      c.addEventListener('mousemove', function (e) { var r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
+    });
+
+    // network canvas in the hero
+    var cv = document.querySelector('.hero canvas.net');
+    if (cv && !reduce && cv.getContext) {
+      var ctx = cv.getContext('2d'), W, H, pts = [], running = true, N = 70;
+      function size() { var r = cv.parentElement.getBoundingClientRect(); W = cv.width = Math.floor(r.width); H = cv.height = Math.floor(r.height); }
+      function seed() { pts = []; for (var i = 0; i < N; i++) pts.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35, r: 1.2 + Math.random() * 1.8 }); }
+      function frame() {
+        if (!running) return;
+        ctx.clearRect(0, 0, W, H);
+        for (var i = 0; i < pts.length; i++) {
+          var p = pts[i]; p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1;
+        }
+        for (var a = 0; a < pts.length; a++) for (var b = a + 1; b < pts.length; b++) {
+          var dx = pts[a].x - pts[b].x, dy = pts[a].y - pts[b].y, d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 130) { ctx.strokeStyle = 'rgba(201,162,39,' + (0.35 * (1 - d / 130)) + ')'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(pts[a].x, pts[a].y); ctx.lineTo(pts[b].x, pts[b].y); ctx.stroke(); }
+        }
+        for (var j = 0; j < pts.length; j++) { ctx.fillStyle = 'rgba(255,255,255,.75)'; ctx.beginPath(); ctx.arc(pts[j].x, pts[j].y, pts[j].r, 0, Math.PI * 2); ctx.fill(); }
+        requestAnimationFrame(frame);
+      }
+      size(); seed(); frame();
+      var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { size(); seed(); }, 200); });
+      if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { es.forEach(function (e) { var was = running; running = e.isIntersecting; if (running && (W === 0 || H === 0)) { size(); seed(); } if (running && !was) frame(); }); }).observe(cv.parentElement);
+    }
+  })();
   // Clamp long text to two lines with a Read more toggle.
   (function () {
     var SEL = ['#services .card p', '.work p', '.work .result', '.proj .card p', '.timeline p',
