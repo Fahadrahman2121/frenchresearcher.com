@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A CRM and quotation platform for a solar installer | Case study | Dr Fahad Rahman</title>
+<meta name="description" content="Customer portal, service desk, field scheduling, maintenance contracts and a quotation engine that produces print-ready solar proposals, built in Django and run in production.">
+<link rel="canonical" href="https://frenchresearcher.com/work/solar-crm.html">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#0b2a5b">
+<meta property="og:title" content="A CRM and quotation platform for a solar installer">
+<meta property="og:description" content="Customer portal, service desk, field scheduling, maintenance contracts and a quotation engine that produces print-ready solar proposals, built in Django and run in production.">
+<meta property="og:image" content="https://frenchresearcher.com/og-image.png">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#0b2a5b; --navy-deep:#071c3d; --accent:#c9a227; --ink:#1a2233; --muted:#5b6577; --line:#e3e8f0; --bg-soft:#f5f7fb; --radius:12px; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); line-height:1.7; background:#fff; font-size:16px; }
+  header.nav { position:sticky; top:0; z-index:10; background:rgba(255,255,255,.96); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); }
+  header.nav .wrap { max-width:1120px; margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between; }
+  .brand { font-family:"Source Serif 4",Georgia,serif; font-weight:700; color:var(--navy); text-decoration:none; font-size:1.1rem; }
+  .brand span { color:var(--accent); }
+  header.nav nav { display:flex; align-items:center; }
+  header.nav nav a { white-space:nowrap; color:var(--ink); text-decoration:none; font-weight:500; font-size:.92rem; margin-left:18px; }
+  header.nav nav a.cta { background:var(--navy); color:#fff; padding:9px 16px; border-radius:8px; line-height:1.2; }
+  header.nav .wrap { gap:12px; }
+  .banner { background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%); color:#fff; padding:64px 0 56px; position:relative; overflow:hidden; }
+  .banner::after { content:""; position:absolute; right:-120px; top:-120px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle,rgba(201,162,39,.35),transparent 70%); }
+  .banner .inner { max-width:900px; margin:0 auto; padding:0 24px; position:relative; z-index:1; }
+  .eyebrow { display:inline-block; font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:.8rem; }
+  .banner h1 { font-family:"Source Serif 4",Georgia,serif; font-size:clamp(1.9rem,4.4vw,2.8rem); line-height:1.15; margin:0 0 .5em; }
+  .banner p { color:#d6deeb; font-size:1.1rem; max-width:62ch; margin:0; }
+  main { max-width:900px; margin:0 auto; padding:44px 24px 80px; }
+  .glance { display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; margin:-80px 0 44px; background:#fff; position:relative; z-index:2; box-shadow:0 14px 40px rgba(11,42,91,.10); }
+  .glance div { padding:18px 20px; border-right:1px solid var(--line); }
+  .glance div:last-child { border-right:0; }
+  .glance dt { font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
+  .glance dd { margin:0; font-weight:600; color:var(--navy); font-size:.95rem; line-height:1.4; }
+  h2 { font-family:"Source Serif 4",Georgia,serif; color:var(--navy); font-size:1.5rem; margin:1.9em 0 .5em; }
+  h2 .n { color:var(--accent); margin-right:10px; }
+  article p { margin:0 0 1.1em; font-size:1.04rem; }
+  article ul { margin:0 0 1.2em; padding-left:0; list-style:none; }
+  article li { position:relative; padding:6px 0 6px 28px; }
+  article li::before { content:"✓"; position:absolute; left:4px; top:6px; color:var(--accent); font-weight:700; }
+  .outcome { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:18px 0 8px; }
+  .outcome div { background:var(--bg-soft); border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:10px; padding:16px 18px; font-size:.95rem; }
+  .outcome b { display:block; color:var(--navy); font-family:"Source Serif 4",Georgia,serif; font-size:1.05rem; margin-bottom:4px; }
+  .lesson { margin:1.6em 0; padding:18px 22px; border-left:4px solid var(--accent); background:var(--bg-soft); border-radius:0 10px 10px 0; font-family:"Source Serif 4",Georgia,serif; font-size:1.1rem; }
+  .stack { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+  .stack span { font-size:.8rem; background:var(--bg-soft); border:1px solid var(--line); border-radius:999px; padding:3px 11px; color:var(--navy); }
+  .note { font-size:.85rem; color:var(--muted); margin-top:26px; }
+  .next { margin-top:48px; display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .next a { display:block; border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px; text-decoration:none; color:var(--navy); transition:transform .2s, box-shadow .2s, border-color .2s; }
+  .next a:hover { transform:translateY(-4px); box-shadow:0 12px 30px rgba(11,42,91,.10); border-color:rgba(201,162,39,.6); }
+  .next small { display:block; color:var(--muted); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; margin-bottom:4px; }
+  .next b { font-family:"Source Serif 4",Georgia,serif; font-size:1.05rem; }
+  .cta-box { margin-top:40px; background:linear-gradient(135deg,var(--navy) 0%,#14407f 100%); color:#fff; border-radius:var(--radius); padding:28px 30px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
+  .cta-box h3 { font-family:"Source Serif 4",Georgia,serif; margin:0 0 4px; font-size:1.3rem; }
+  .cta-box p { margin:0; color:#d6deeb; }
+  .btn { display:inline-block; padding:12px 22px; border-radius:8px; background:var(--accent); color:var(--navy-deep); text-decoration:none; font-weight:600; }
+  footer { border-top:1px solid var(--line); color:var(--muted); font-size:.85rem; background:var(--bg-soft); }
+  footer .wrap { max-width:1120px; margin:0 auto; padding:22px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+  footer a { color:inherit; }
+  @media (max-width:760px) { .glance { grid-template-columns:1fr 1fr; } .glance div:nth-child(2) { border-right:0; } .glance div:nth-child(-n+2) { border-bottom:1px solid var(--line); } .outcome, .next { grid-template-columns:1fr; } header.nav nav a:not(.cta) { display:none; } }
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="../">Dr Fahad Rahman<span>.</span></a>
+  <nav><a href="../#projects">Projects</a><a href="../blog/">Blog</a><a class="cta" href="../#contact">Work with me</a></nav>
+</div></header>
+<section class="banner"><div class="inner">
+  <span class="eyebrow">Case study</span>
+  <h1>A CRM and quotation platform for a solar installer</h1>
+  <p>M.F. Engineering Services, a solar installer in Lahore, ran service calls, field visits, maintenance contracts and proposals across phone calls and spreadsheets. It now runs on one system.</p>
+</div></section>
+<main>
+  <dl class="glance"><div><dt>Client</dt><dd>M.F. Engineering Services</dd></div><div><dt>Role</dt><dd>Designer, developer, operator</dd></div><div><dt>Status</dt><dd>Live in production</dd></div><div><dt>Stack</dt><dd>Python, Django, MySQL</dd></div></dl>
+  <article>
+
+<h2><span class="n">01</span>The challenge</h2>
+<p>A growing solar company sells systems, installs them and then maintains them for years. Each of those stages lived somewhere different. Complaints came in by phone, engineer visits were arranged by message, maintenance contracts sat in a spreadsheet, and every proposal was rebuilt by hand from a cost sheet, which meant prices and layouts drifted from one customer to the next.</p>
+
+<h2><span class="n">02</span>What I built</h2>
+<p>A single Django application with two parts: customer operations and quotations.</p>
+<ul>
+  <li><b>Customer service portal.</b> Customers can register a complaint as a guest or through an account, and track its status without calling the office. A verified customer sees only their own complaints and contract, with a notice when the contract is close to expiry.</li>
+  <li><b>Service desk with approvals.</b> Complaints and service activities move through a defined workflow that management approves.</li>
+  <li><b>Field operations.</b> An engineer scheduler that respects leave and public holidays, engineer profiles, and an operations view of who is where.</li>
+  <li><b>Maintenance contracts.</b> A contract register with renewal workflow, contract value and payments, plan management, and an email digest of renewals coming due.</li>
+  <li><b>Quotation engine.</b> Proposals are built from bill-of-quantities templates for each system size, with pricing, payment schedule and a project timeline, and print as a multi-page A4 proposal ready to send as a PDF.</li>
+  <li><b>Controls where they matter.</b> Sales engineers see only their own quotations. A quotation moves from draft through negotiation to pending approval, and only the designated approver can mark it final, after which it is locked against re-pricing.</li>
+</ul>
+
+<h2><span class="n">03</span>How it is run</h2>
+<p>A live system with real customers and real prices changes carefully:</p>
+<ul>
+  <li>Every change to quotation logic is validated offline against the full set of real quotations from the latest backup before it reaches production, so a pricing rule never surprises a customer.</li>
+  <li>Each deployment keeps a rollback copy on the server and is verified by file hash after upload, then checked live.</li>
+  <li>Backups are scripted, and hosting credentials are stored encrypted on the administrator's workstation rather than in scripts.</li>
+</ul>
+
+<h2><span class="n">04</span>Outcome</h2>
+<div class="outcome">
+  <div><b>One system</b>Complaints, visits, contracts and proposals share one customer record.</div>
+  <div><b>Consistent proposals</b>Every quotation comes from the same templates and approval path, and prints the same way.</div>
+  <div><b>Customers self-serve</b>Status tracking and complaint registration no longer need a phone call.</div>
+</div>
+
+<h2><span class="n">05</span>What I would tell another business</h2>
+<div class="lesson">Put the approval rule in the software, not in the process document.</div>
+<p>The single most valuable control in this system is also the simplest: nobody except the approver can finalise a price, and a final price cannot be edited. It removed a whole category of disagreement between sales and management.</p>
+<div class="stack"><span>Python</span><span>Django</span><span>MySQL</span><span>Customer portal</span><span>Workflow and approvals</span><span>PDF proposals</span><span>Managed hosting</span></div>
+<p style="margin-top:24px"><a class="btn" href="https://crm.mfes.com.pk" target="_blank" rel="noopener">Visit the live system &rarr;</a></p>
+
+  </article>
+  <div class="cta-box"><div><h3>Facing something similar?</h3><p>Tell me what you are trying to achieve and where it is stuck.</p></div><a class="btn" href="../#contact">Start a conversation</a></div>
+  <div class="next"><a href="security-audit.html"><small>Next case study</small><b>Continuous security audit of a whole IT estate</b></a><a href="secure-hosting.html"><small>Next case study</small><b>Hosting a vendor-built system without trusting the vendor</b></a></div>
+</main>
+<footer><div class="wrap"><span>&copy; <span id="yr"></span> Dr Fahad Rahman. All rights reserved.</span><span><a href="../privacy.html">Privacy</a> &middot; frenchresearcher.com</span></div></footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<script data-goatcounter="https://frenchresearcher.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
