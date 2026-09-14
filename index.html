@@ -163,6 +163,17 @@
   @media (max-width: 1000px) { .folio { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 700px) { .folio { grid-template-columns: 1fr; } }
 
+  /* Earlier programmes */
+  .earlier { margin-top: 48px; padding-top: 36px; border-top: 1px solid var(--line); }
+  .earlier h3.sub { font-size: 1.35rem; margin-bottom: 6px; }
+  .egrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 24px; }
+  .eitem { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; border-left: 4px solid var(--accent); }
+  .eitem h4 { margin: 0 0 4px; font-family: "Source Serif 4", Georgia, serif; font-size: 1.02rem; color: var(--navy); }
+  .eitem .org { font-size: .82rem; color: var(--muted); margin-bottom: 8px; }
+  .eitem p { margin: 0; font-size: .9rem; color: var(--ink); }
+  @media (max-width: 1000px) { .egrid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .egrid { grid-template-columns: 1fr; } }
+
   /* Student projects */
   .students { margin-top: 48px; padding-top: 36px; border-top: 1px solid var(--line); }
   .students h3.sub { font-size: 1.35rem; margin-bottom: 6px; }
@@ -444,7 +455,7 @@
       <span class="eyebrow">About</span>
       <h2>Executive experience, research depth</h2>
       <p>I have led IT for a provincial regulator, a national railway and one of the largest school networks in Pakistan, worked as a security engineer in France, and taught digital forensics at Lahore Garrison University. I have sat on both sides of the table: the executive who owns the outcome and the engineer who makes it work.</p>
-      <p>My doctorate at Universit&eacute; Paris Cit&eacute; is in blockchain systems, and I still publish with IEEE and Springer. I also write production code: the portals, automation, research simulators and retrieval-augmented AI assistants described on this site are my own Python, and I supervise student teams building RAG applications of their own. Clients get advice grounded in current research and in working software, not slideware.</p>
+      <p>My doctorate at Universit&eacute; Paris Cit&eacute; is in blockchain systems, I remain an associate researcher at its LIPADE laboratory, and I still publish with IEEE and Springer and review for international journals. I also write production code: the portals, automation, research simulators and retrieval-augmented AI assistants described on this site are my own Python, and I supervise student teams building RAG applications of their own. Clients get advice grounded in current research and in working software, not slideware.</p>
           </div>
     <div class="facts">
       <h3>Qualifications</h3>
@@ -517,6 +528,11 @@
         <p>Head of IT for the provincial regulator: continuous security auditing of the cluster, firewall and directory; an in-house helpdesk and attendance platform; segmented hosting and a DevSecOps release gate for a vendor-built system.</p>
       </li>
       <li>
+        <div class="when">2020 &ndash; present &middot; Research</div>
+        <h3>Associate Researcher, LIPADE, Universit&eacute; Paris Cit&eacute;</h3>
+        <p>Laboratoire d’Informatique Paris Descartes, Faculty of Mathematics and Computer Science. Ongoing research collaboration in blockchain scalability, cross-chain systems and post-quantum resilience, and peer review for international journals.</p>
+      </li>
+      <li>
         <div class="when">2025 &ndash; 2026 &middot; Academia</div>
         <h3>Adjunct Faculty Member, Trainer &amp; Consultant, Lahore Garrison University</h3>
         <p>Department of Criminology and the Digital Forensic Research and Service Centre. Undergraduate teaching, research supervision, professional training and keynote talks in digital forensics and blockchain. Also supervised four student teams building RAG chatbots in the 2026 Islamia College internship programme.</p>
@@ -537,9 +553,9 @@
         <p>Vulnerability management, hardening and incident response; built CVE management software for commercial security operations.</p>
       </li>
       <li>
-        <div class="when">2019 &ndash; 2020 &middot; Academia</div>
-        <h3>Lecturer in Cybersecurity, University of Engineering &amp; Technology, Lahore</h3>
-        <p>Cybersecurity and secure systems courses with practical labs.</p>
+        <div class="when">2019 &ndash; 2020 &middot; Consulting</div>
+        <h3>Independent IT &amp; Cybersecurity Consultant</h3>
+        <p>Advisory and security engagements for organisations in Pakistan between executive roles: infrastructure reviews, security hardening and technology planning.</p>
       </li>
       <li>
         <div class="when">2006 &ndash; 2015 &middot; Telecom and transport</div>
@@ -620,6 +636,53 @@
         <p>Discrete-event simulators in Python for the cross-chain controller and the quantum on-spend work: parameterised experiment suites, deterministic seeds, and result tables generated by script so every number in a paper traces to a run.</p>
         <div class="result">Thousands of deterministic runs per study; reviewers can regenerate every figure from the artifact.</div>
         <div class="stack"><span>Python</span><span>Simulation</span><span>Statistics</span><span>Reproducible research</span></div>
+      </div>
+    </div>
+    <div class="earlier">
+      <span class="eyebrow">Programmes led</span>
+      <h3 class="sub">Earlier programmes and platforms</h3>
+      <p class="intro">Larger implementations I established or led in executive roles before 2024.</p>
+      <div class="egrid">
+        <div class="eitem">
+          <h4>First 3D printing lab in the public sector</h4>
+          <div class="org">Public sector, Pakistan</div>
+          <p>Established the first 3D printing laboratory in a Pakistani public-sector organisation, from procurement and setup to training staff to produce parts and prototypes in house.</p>
+        </div>
+        <div class="eitem">
+          <h4>HoloLens mixed-reality lab</h4>
+          <div class="org">Public sector, Pakistan</div>
+          <p>Set up a Microsoft HoloLens lab for virtual walkthroughs of buildings still under construction, so designs and site maps could be reviewed and finalised before work continued.</p>
+        </div>
+        <div class="eitem">
+          <h4>E-ticketing system</h4>
+          <div class="org">Pakistan Railways</div>
+          <p>Developed and rolled out an electronic ticketing system for one of the largest public-sector organisations in the country, replacing paper-based sales.</p>
+        </div>
+        <div class="eitem">
+          <h4>SAP S/4HANA deployment</h4>
+          <div class="org">Pakistan Railways</div>
+          <p>Led the deployment of SAP S/4HANA across a nationwide organisation, including governance, vendor management and the transition from legacy systems.</p>
+        </div>
+        <div class="eitem">
+          <h4>ANPR parking automation</h4>
+          <div class="org">Public-sector parking operator, Lahore</div>
+          <p>Automated car-park entry and exit with automatic number-plate recognition and access control, removing manual ticketing and tightening revenue control.</p>
+        </div>
+        <div class="eitem">
+          <h4>Geofenced transport subsidy system</h4>
+          <div class="org">Public transport authority, Lahore</div>
+          <p>Built an automated subsidy system that uses geofencing to verify routes and trips, so payments follow measured service rather than manual claims.</p>
+        </div>
+        <div class="eitem">
+          <h4>Oracle E-Business Suite</h4>
+          <div class="org">Education Services Limited</div>
+          <p>Managed Oracle EBS across finance and operations for a large school network, including integration with new digital platforms and data governance.</p>
+        </div>
+        <div class="eitem">
+          <h4>Microsoft Dynamics 365 deployment</h4>
+          <div class="org">Public sector, Pakistan</div>
+          <p>Deployed Microsoft Dynamics 365 in a public-sector organisation, covering configuration, data migration, user adoption and hand-over to operations.</p>
+        </div>
       </div>
     </div>
     <div class="students">
@@ -781,7 +844,7 @@
   <div class="wrap">
     <span class="eyebrow">Research</span>
     <h2>Selected publications</h2>
-    <p class="intro">Blockchain scalability, decentralised trust and secure distributed systems, with IEEE and Springer. Full list on <a href="https://scholar.google.com/citations?user=wD9jqwQAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.</p>
+    <p class="intro">Blockchain scalability, decentralised trust and secure distributed systems, with IEEE and Springer. I also serve as a peer reviewer for top-ranked international journals; reviewer certificates are on my LinkedIn profile. Full list on <a href="https://scholar.google.com/citations?user=wD9jqwQAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.</p>
     <ul class="pubs">
       <li>
         <div class="title">Secure and Scalable Blockchain-Enabled 5G Vehicular Networks Using Federated Trust-Aware Sharding and Cross-Shard Authentication</div>
