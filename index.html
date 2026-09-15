@@ -491,6 +491,18 @@
   .pubs .title { font-weight: 600; color: var(--ink); }
   .pubs .venue { color: var(--muted); font-size: .92rem; }
 
+  /* Talks */
+  .talks { margin-top: 40px; }
+  .talks h3.sub { font-size: 1.3rem; margin: 0 0 14px; }
+  .talk { display: grid; grid-template-columns: 120px 1fr; gap: 18px; padding: 16px 0; border-top: 1px solid var(--line); }
+  .talk:last-child { border-bottom: 1px solid var(--line); }
+  .talk .when { font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); font-weight: 600; padding-top: 3px; }
+  .talk .title { font-weight: 600; color: var(--ink); }
+  .talk .where { color: var(--muted); font-size: .92rem; margin-top: 2px; }
+  .talk a { color: var(--navy); font-weight: 600; font-size: .88rem; text-decoration: none; }
+  .talk a:hover { text-decoration: underline; }
+  @media (max-width: 600px) { .talk { grid-template-columns: 1fr; gap: 4px; } }
+
   /* Blog */
   .posts { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; margin-top: 36px; }
   .post { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; display: flex; flex-direction: column; }
@@ -1323,6 +1335,19 @@
         <div class="venue">IEEE International Conference on Software, Telecommunications and Computer Networks (SoftCOM), 2023</div>
       </li>
     </ul>
+    <div class="talks rv">
+      <span class="eyebrow">Talks</span>
+      <h3 class="sub">Talks and guest lectures</h3>
+      <div class="talk">
+        <div class="when">Oct 2025</div>
+        <div>
+          <div class="title">Blockchain App &amp; Web 3.0</div>
+          <div class="where">Guest speaker session, Department of Management Science, Lahore Garrison University &middot; for BBA 7th and 8th semester students, on current trends and applications of blockchain technology</div>
+          <a href="https://www.linkedin.com/posts/lahore-garrison-university_blockchain-app-web-30-guest-speaker-session-activity-7384450333902798848-OxYQ/" target="_blank" rel="noopener">View LGU&rsquo;s post &rarr;</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
