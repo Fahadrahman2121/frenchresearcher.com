@@ -328,7 +328,7 @@
     border-bottom: 1px solid var(--line);
   }
   header.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-  .brand { font-family: "Source Serif 4", Georgia, serif; font-weight: 700; color: var(--navy); text-decoration: none; font-size: 1.1rem; }
+  .brand { font-family: "Source Serif 4", Georgia, serif; font-weight: 700; color: var(--navy); text-decoration: none; font-size: 1.1rem; white-space: nowrap; flex-shrink: 0; }
   .brand span { color: var(--accent); }
   nav ul { list-style: none; display: flex; gap: 18px; margin: 0 0 0 24px; padding: 0; align-items: center; }
   nav a { text-decoration: none; color: var(--ink); font-weight: 500; font-size: .92rem; white-space: nowrap; }
@@ -337,7 +337,7 @@
   nav a.cta:hover { background: var(--navy-deep); color: #fff; }
   nav li.ext a { display: inline-flex; align-items: center; gap: 6px; color: var(--navy); }
   nav li.ext a:hover { color: var(--accent); }
-  @media (max-width: 1240px) and (min-width: 861px) { nav li.ext a span { display: none; } nav li.ext a svg { width: 22px; height: 22px; } }
+  @media (min-width: 1121px) { nav li.ext a span { display: none; } nav li.ext a svg { width: 22px; height: 22px; } }
   .menu-btn { display: none; background: none; border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; font-size: 1.2rem; }
 
   /* Hero */
@@ -711,8 +711,8 @@
     .hero { padding: 56px 0 48px; }
     section { padding: 52px 0; }
   }
-  /* Header menu collapses before it can overflow (it no longer fits below ~1000px) */
-  @media (max-width: 1000px) {
+  /* Header menu collapses before it can overflow (the full row needs ~1100px) */
+  @media (max-width: 1120px) {
     nav ul { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #fff; flex-direction: column; gap: 0; border-bottom: 1px solid var(--line); }
     nav ul.open { display: flex; }
     nav ul li a { display: block; padding: 14px 24px; border-top: 1px solid var(--line); }
