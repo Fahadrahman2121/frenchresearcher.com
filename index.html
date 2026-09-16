@@ -114,6 +114,11 @@
     "https://scholar.google.com/citations?user=wD9jqwQAAAAJ",
     "https://github.com/Fahadrahman2121",
     "https://www.google.com/maps?cid=1596000703408897514"
+  ],
+  "award": [
+    "Commendation Certificate, Federal Minister for Railways, Pakistan (2018)",
+    "Keynote Speaker, 4th International Conference on Anti Money Laundering and Combating the Terrorism Financing, Lahore Garrison University",
+    "Invited Speaker, W-CoDEC 2017, Lahore University of Management Sciences"
   ]
 }
 </script>
@@ -516,6 +521,14 @@
   .post .more:hover { text-decoration: underline; }
 
   /* Testimonials */
+  /* Awards */
+  .awards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 22px; margin-top: 36px; }
+  .award { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 24px 22px; position: relative; overflow: hidden; }
+  .award::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--accent); }
+  .award .ico { width: 38px; height: 38px; color: var(--accent); margin-bottom: 12px; }
+  .award .yr { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .award h3 { font-size: 1.12rem; margin: 4px 0 8px; color: var(--navy); }
+  .award p { margin: 0; color: var(--muted); font-size: .93rem; line-height: 1.5; }
   .quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; margin-top: 36px; }
   .quote { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 28px 24px; position: relative; }
   .quote::before { content: "“"; position: absolute; top: 8px; left: 22px; font-family: "Source Serif 4", Georgia, serif; font-size: 4rem; line-height: 1; color: var(--accent); opacity: .6; }
@@ -1359,6 +1372,20 @@
           <a href="https://www.linkedin.com/posts/lahore-garrison-university_blockchain-app-web-30-guest-speaker-session-activity-7384450333902798848-OxYQ/" target="_blank" rel="noopener">View LGU&rsquo;s post &rarr;</a>
         </div>
       </div>
+      <div class="talk">
+        <div class="when">Keynote</div>
+        <div>
+          <div class="title">4th International Conference on Anti Money Laundering and Combating the Terrorism Financing</div>
+          <div class="where">Keynote speaker, Department of Criminology and Digital Forensics Research and Service Center, Lahore Garrison University</div>
+        </div>
+      </div>
+      <div class="talk">
+        <div class="when">Dec 2017</div>
+        <div>
+          <div class="title">Workshop on e-Services Composition and Development in the Cloud (W-CoDEC 2017)</div>
+          <div class="where">Invited speaker, Department of Computer Science, Syed Babar Ali School of Science and Engineering, LUMS, Lahore</div>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -1400,7 +1427,36 @@
   </div>
 </section>
 
-<section id="faq">
+<section id="awards">
+  <div class="wrap">
+    <span class="eyebrow">Awards</span>
+    <h2 class="rv">Awards and recognition</h2>
+    <div class="awards rv-stagger">
+      <div class="award">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="5"/><path d="M8.5 11 6 3h4l2 5 2-5h4l-2.5 8"/><path d="m12 13 .9 1.8 2 .3-1.45 1.4.35 2-1.8-.95-1.8.95.35-2L9.1 15.1l2-.3z"/></svg>
+        <div class="yr">2018</div><h3>Commendation Certificate</h3>
+        <p>Awarded by the Federal Minister for Railways, Pakistan Railways, in recognition of outstanding performance as Principal Officer (Director Information Technology).</p>
+      </div>
+      <div class="award">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v4M8 22h8"/></svg>
+        <div class="yr">Keynote speaker</div><h3>4th International Conference on Anti Money Laundering and Combating the Terrorism Financing</h3>
+        <p>Keynote speaker shield from the Department of Criminology and the Digital Forensics Research and Service Center, Lahore Garrison University.</p>
+      </div>
+      <div class="award">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v4M8 22h8"/></svg>
+        <div class="yr">December 2017</div><h3>Invited speaker, W-CoDEC 2017</h3>
+        <p>Workshop on e-Services Composition and Development in the Cloud, Department of Computer Science, Syed Babar Ali School of Science and Engineering, LUMS.</p>
+      </div>
+      <div class="award">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.5 6 .9-4.35 4.25 1 6L12 16.8 6.65 19.65l1-6L3.3 9.4l6-.9z"/></svg>
+        <div class="yr">Recognition</div><h3>Lahore Garrison University</h3>
+        <p>Token of appreciation presented by Lahore Garrison University.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="faq">
   <div class="wrap">
     <span class="eyebrow">FAQ</span>
     <h2 class="rv">Frequently asked questions</h2>
@@ -1535,6 +1591,7 @@
       <a href="#projects">Projects</a>
       <a href="#blockchain">Blockchain</a>
       <a href="#research">Research</a>
+      <a href="#awards">Awards</a>
       <a href="blog/">Blog</a>
       <a href="#faq">FAQ</a>
       <a href="work/security-audit.html">Case study: security audit</a>
