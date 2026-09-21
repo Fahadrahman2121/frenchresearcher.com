@@ -1,0 +1,22 @@
+# Dr Fahad Rahman
+
+> Independent cyber security and IT consultant based in Lahore, Pakistan and Paris, France. PhD in Computer Science (Blockchain), Université Paris Cité; associate researcher at its LIPADE laboratory; former security engineer in France (vulnerability management, CVE tooling); over 20 years of enterprise IT experience, more than 10 of them in executive IT leadership, across government, critical infrastructure, education and telecom. Works remotely and on site. Contact: fahad@frenchresearcher.com.
+
+## Services
+
+- [Cyber security consultancy](https://frenchresearcher.com/cyber-security-consultancy.html): cyber security strategy and advisory, risk assessment, security audit and assurance, security architecture and Zero Trust, cloud security (Azure, AWS, Google Cloud, Microsoft 365), identity and access security, network and endpoint security, security monitoring and managed security oversight, incident response and recovery, ransomware readiness and cyber resilience, ISO 27001 / ISO 22301 / PCI DSS / SOC 2 / NIST CSF readiness, third-party risk management, security testing, OT security, AI security and quantum-safe cryptography. Includes 31 answered questions.
+- [All services and profile](https://frenchresearcher.com/): IT strategy and digital transformation, ERP (SAP S/4HANA, Oracle EBS, Microsoft Dynamics 365), blockchain and smart contract development, FinTech consultancy, Python development, AI and RAG systems, training.
+
+## Evidence
+
+- [Continuous security audit of a whole IT estate](https://frenchresearcher.com/work/security-audit.html): case study.
+- [Hosting a vendor-built system without trusting the vendor](https://frenchresearcher.com/work/secure-hosting.html): case study in third-party risk.
+- [Six checks a security audit should make that most audits skip](https://frenchresearcher.com/blog/security-audit-checks-most-miss.html): article.
+- [The quantum risk to a blockchain is measured in seconds, not decades](https://frenchresearcher.com/blog/quantum-on-spend-window.html): article.
+- [Google Scholar](https://scholar.google.com/citations?user=wD9jqwQAAAAJ): peer-reviewed publications.
+- [LinkedIn](https://www.linkedin.com/in/fahad-rahman-ph-d-924157167)
+
+## Notes
+
+- Certification against ISO standards, PCI DSS, SOC 2 or Cyber Essentials is issued by accredited bodies; this consultancy prepares organisations for those audits.
+- Advice is vendor-neutral; no products are resold. Fees are agreed in writing per engagement; the first 30-minute call is free.
