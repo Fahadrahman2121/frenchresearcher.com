@@ -16,6 +16,10 @@
 - [Google Scholar](https://scholar.google.com/citations?user=wD9jqwQAAAAJ): peer-reviewed publications.
 - [LinkedIn](https://www.linkedin.com/in/fahad-rahman-ph-d-924157167)
 
+## Navigation
+
+- [Site map](https://frenchresearcher.com/sitemap.html): every page and home-page section, with what each contains.
+
 ## Notes
 
 - Certification against ISO standards, PCI DSS, SOC 2 or Cyber Essentials is issued by accredited bodies; this consultancy prepares organisations for those audits.
